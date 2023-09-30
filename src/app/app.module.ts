@@ -18,6 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuModule } from 'primeng/menu';
 import { ToastModule } from 'primeng/toast';
 import { MessagesModule } from 'primeng/messages';
+import { UserComponent } from './components/user/user.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -33,7 +35,8 @@ import { MessagesModule } from 'primeng/messages';
     ButtonComponent,
     LogoComponent,
     BenefitSliderComponent,
-    BenefitSliderItemComponent
+    BenefitSliderItemComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { MessagesModule } from 'primeng/messages';
     BrowserAnimationsModule,
     MenuModule,
     ToastModule,
-    MessagesModule
+    MessagesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,10 @@
+<p>user works!</p>
+<div class="card flex justify-content-center">
+    <p-button label="Info" (click)="flag = true" icon="pi pi-check"></p-button>
+  </div>
+  <span *ngIf="flag">
+    <ng-container *ngFor="let user of users.data">
+      <p>{{ user.email}}</p>
+      <p>{{user.username}}</p>
+    </ng-container>
+  </span>
