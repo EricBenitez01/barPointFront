@@ -20,6 +20,10 @@ import { ToastModule } from 'primeng/toast';
 import { MessagesModule } from 'primeng/messages';
 import { UserComponent } from './components/user/user.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InputTextModule } from 'primeng/inputtext';
+import { CalendarModule } from 'primeng/calendar';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -46,7 +50,11 @@ import { HttpClientModule } from '@angular/common/http';
     MenuModule,
     ToastModule,
     MessagesModule,
-    HttpClientModule
+    HttpClientModule,
+    InputTextModule ,
+    CalendarModule ,
+    RadioButtonModule ,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

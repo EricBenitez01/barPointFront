@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { UsersResponse } from 'src/app/services/inter';
-import { UsersService } from 'src/app/services/users.service';
+import { UsersResponse, UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-user',
