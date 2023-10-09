@@ -28,6 +28,16 @@ export class UsersService {
         return this.http.post<UsersResponse>(`${this.baseUrl}/users`, data, httpOptions);
     }
 
+    userLogin(data: UserLogin): Observable<UsersResponse> {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                // Puedes agregar otras cabeceras personalizadas si es necesario
+            })
+        };
+        return this.http.post<UsersResponse>(`${this.baseUrl}/authUser`, data, httpOptions);
+    }
+
 }
 
 export interface User {
@@ -38,6 +48,10 @@ export interface User {
     gender: string,
     password: string,
     rolFK: number
+}
+export interface UserLogin {
+    email: string; 
+    password: string;
 }
 
 export interface UsersResponse {

@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="bg-white shadow-md rounded p-4 mx-auto w-90">
+    <h2 class="text-2xl font-semibold mb-4">Iniciar Sesión</h2>
+    <form>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                Correo Electrónico
+            </label>
+            <input id="email" type="email" [(ngModel)]="usuario.email" name="email"
+                class="p-inputtext w-full py-2 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
+                required />
+        </div>
+
+        <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                Contraseña
+            </label>
+            <input id="password" type="password" [(ngModel)]="usuario.password" name="password"
+                class="p-inputtext w-full py-2 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
+                required />
+        </div>
+
+        <div class="mb-6 text-center">
+            <button type="submit"
+                class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                (click)="onLogin()">
+                Iniciar Sesión
+            </button>
+        </div>
+    </form>
+</div>
+
