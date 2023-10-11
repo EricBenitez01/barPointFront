@@ -25,6 +25,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -56,7 +57,8 @@ import { DropdownModule } from 'primeng/dropdown';
     CalendarModule ,
     RadioButtonModule ,
     FormsModule,
-    DropdownModule
+    DropdownModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

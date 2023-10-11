@@ -1,32 +1,40 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserLogin, UsersService } from 'src/app/services/users.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  usuario: UserLogin = {
-    email: "",
-    password: ""
-  };  // Declaración de un objeto para almacenar los datos del usuario
+    usuarioForm: FormGroup;
+    usuario: UserLogin = {
+        email: "",
+        password: ""
+    };
 
-  constructor(private userService: UsersService, private cdr: ChangeDetectorRef) { }
+    constructor(private userService: UsersService, private cdr: ChangeDetectorRef, private fb: FormBuilder) {
+        this.usuarioForm = this.fb.group({
+            email: ['', [Validators.required, Validators.email]],
+            password: ['', Validators.required]
+        });
+    }
 
-  async onLogin() {
-    // Aquí puedes agregar la lógica para procesar el inicio de sesión
-    // Por ejemplo, puedes enviar una solicitud HTTP al servidor para autenticar al usuario
-    // y redirigirlo a la página principal si las credenciales son válidas.
-    let response = await this.userService.userLogin(this.usuario).subscribe(
-      (data) => {
-        this.cdr.detectChanges();
-        console.log(data);
-      },
-      (error) => {
-        // Manejo de errores
-        console.error(error);
-      }
-    ); 
-  }
+    async onLogin() {
+        if (this.usuarioForm.valid) { // Verifica si el formulario es válido
+            this.usuario = { ...this.usuario, ...this.usuarioForm.value };
+            let response = await this.userService.userLogin(this.usuario).subscribe(
+                (data) => {
+                    this.cdr.detectChanges();
+                    console.log(data);
+                },
+                (error) => {
+                    // Manejo de errores
+                    console.error(error);
+                }
+            );
+        }
+    }
 }
+
