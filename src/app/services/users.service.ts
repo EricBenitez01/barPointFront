@@ -28,6 +28,10 @@ export class UsersService {
         return this.http.post<UsersResponse>(`${this.baseUrl}/users`, data, httpOptions);
     }
 
+    getGendersList() {
+        return this.http.get<any>('assets/genders-list.json');
+    }
+
 }
 
 export interface User {
