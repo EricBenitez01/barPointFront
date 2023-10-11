@@ -18,8 +18,15 @@ cliente: User = {
     rolFK: 1
 };// Objeto para almacenar los datos del cliente
 
+
+    genderList: string[] = [];
+
     // Constructor
     constructor(private userService: UsersService, private cdr: ChangeDetectorRef ) { }
+
+    ngOnInit() {
+        this.genderList = ["Masculino", "Femenino", "Otro"];
+    }
 
     // Función para manejar el envío del formulario
     async onSubmit() {

@@ -1,76 +1,72 @@
-<div class="bg-white shadow-md rounded p-4 mx-auto w-90 "style="width: 90%;">
-    <h2 class="text-2xl font-semibold mb-4">Registro de Clientes del Bar</h2>
+<div class="shadow-md rounded p-4 mx-auto w-90 " style="width: 90%; background: rgba(1, 1, 1, 0.8)">
+
+    <div class="flex justify-content-evenly">
+        <h3 class="text-white border-bottom-3 pb-1 border-pink-600">CREAR CUENTA</h3>
+        <h3 class="text-white">INICIAR SESIÓN</h3>
+    </div>
+
+    <div class="flex flex-column align-items-center">
+        <h4 class="text-white mb-0">COMENZÁ A SUMAR</h4>
+        <h5 class="text-center text-white mt-2 mb-6 px-3">Ingresá tus datos y comenzá a disfrutar de tus beneficios con
+            nosotros.</h5>
+    </div>
+
     <form>
         <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="nombreApellido">
-                Nombre y Apellido
-            </label>
             <input id="nombreApellido" type="text" [(ngModel)]="cliente.username" name="nombreApellido"
-                class="p-inputtext w-full py-2 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
-                required />
+                class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
+                placeholder="Nombre y Apellido" required />
         </div>
 
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
-                Correo Electrónico
-            </label>
-            <input id="email1" type="email" [(ngModel)]="cliente.email" name="email"
-                class="p-inputtext w-full py-2 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
-                required />
-        </div>
 
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="fechaNacimiento">
-                Fecha de Nacimiento
-            </label>
-            <p-calendar id="fechaNacimiento" [(ngModel)]="cliente.birthday" name="fechaNacimiento"
-                [showIcon]="true"
-                class="w-full py-2 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"></p-calendar>
-        </div>
+        <div class="flex">
 
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="localidadDireccion">
-                Localidad de Residencia o Dirección
-            </label>
-            <input id="localidadDireccion" type="text" [(ngModel)]="cliente.address" name="localidadDireccion"
-                class="p-inputtext w-full py-2 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
-                required />
-        </div>
-
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="Password">
-                Password
-            </label>
-            <input id="Password" type="text" [(ngModel)]="cliente.password" name="Password"
-                class="p-inputtext w-full py-2 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
-                required />
-        </div>
-
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2">
-                Género
-            </label>
-            <div class="p-formgroup-inline text-gray-700">
-                <div class="p-field-radiobutton mr-4 ">
-                    <p-radioButton name="sexo" [(ngModel)]="cliente.gender" inputId="sexoMasculino" value="Masculino">
-                    </p-radioButton>
-                    <label for="sexoMasculino">Masculino</label>
-                </div>
-                <div class="p-field-radiobutton">
-                    <p-radioButton name="sexo" [(ngModel)]="cliente.gender" inputId="sexoFemenino" value="Femenino">
-                    </p-radioButton>
-                    <label for="sexoFemenino">Femenino</label>
-                </div>
+            <div class="mb-4 w-6">
+                <p-dropdown id="genderSelect" [options]="genderList" [(ngModel)]="cliente.gender" name="gender"
+                    placeholder="Género" [style]="{'padding': '0.2rem 0 0.3rem 0'}">
+                    <option *ngFor="let option of genderList" [value]="option">{{ option }}</option>
+                </p-dropdown>
             </div>
+
+            <div class="mb-4 w-6">
+                <p-calendar id="fechaNacimiento" [(ngModel)]="cliente.birthday" name="fechaNacimiento" [showIcon]="true"
+                    [inputStyle]="{'padding': '1rem 0 1rem 1rem'}"
+                    class="w-full py-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
+                    placeholder="Cumpleaños">
+                </p-calendar>
+            </div>
+
+
         </div>
 
-        <div class="mb-6 text-center">
+        <div class="mb-4">
+            <input id="localidadDireccion" type="text" [(ngModel)]="cliente.address" name="localidadDireccion"
+                class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
+                placeholder="Localidad" required />
+        </div>
+
+        <div class="mb-4">
+            <input id="email" type="email" [(ngModel)]="cliente.email" name="email"
+                class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
+                placeholder="E-mail" required />
+        </div>
+
+        <div class="mb-4">
+            <input id="Password" type="text" [(ngModel)]="cliente.password" name="Password"
+                class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
+                placeholder="Constraseña" required />
+        </div>
+
+        <div class="mt-5 mb-3 text-center">
             <button type="submit"
-                class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                class="bg-transparent py-2 px-4 text-gray-600 border-solid border-gray-600 border-round-3xl "
                 (click)="onSubmit()">
-                Registrarse
+                REGISTRARME
             </button>
         </div>
     </form>
 </div>
 
+<div class="text-center text-white">
+    <h6>¿Ya tenés una cuenta? Iniciá Sesión</h6>
+</div>

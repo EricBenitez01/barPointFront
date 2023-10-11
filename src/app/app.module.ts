@@ -24,6 +24,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 
@@ -54,7 +55,8 @@ import { FormsModule } from '@angular/forms';
     InputTextModule ,
     CalendarModule ,
     RadioButtonModule ,
-    FormsModule
+    FormsModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
