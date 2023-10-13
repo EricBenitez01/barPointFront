@@ -26,6 +26,10 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { CardListComponent } from './components/card-list/card-list.component';
+import { CardModule } from 'primeng/card';
+import { CarouselModule } from 'primeng/carousel';
 
 
 
@@ -42,7 +46,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     LogoComponent,
     BenefitSliderComponent,
     BenefitSliderItemComponent,
-    UserComponent
+    UserComponent,
+    HomeComponent,
+    CardListComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     RadioButtonModule ,
     FormsModule,
     DropdownModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CardModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

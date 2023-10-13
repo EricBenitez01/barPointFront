@@ -1,10 +1,12 @@
-<p>user works!</p>
-<div class="card flex justify-content-center">
-  <p-button label="Info" (click)="flag = true" icon="pi pi-check"></p-button>
+<!-- Nombre de el usuario y la card de los puntos del usuario. todo traido desde el users/id -->
+
+<div>
+    <p class="helloUser">¡Hola Roberto!</p>
+    <div class="backgroundUserPoints">
+        <div class="background-overlay"></div>
+        <div class="center-contents">
+            <p class="points">2000</p>
+            <p class="text">barpoints</p>
+        </div>
+    </div>
 </div>
-<span *ngIf="flag">
-  <ng-container *ngFor="let user of users.data">
-    <p>{{ user.email}}</p>
-    <!-- <p>{{user.username}}</p> -->
-  </ng-container>
-</span>

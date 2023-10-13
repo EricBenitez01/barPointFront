@@ -3,7 +3,7 @@
 @import "primeflex/themes/primeone-light.css";   
 @import "primeicons/primeicons.css";
 
-.background {
+.backgroundApp {
     background: rgb(234,84,147);
     background: linear-gradient(0deg, rgba(234,84,147,1) 0%, rgba(92,64,146,1) 100%);
 }

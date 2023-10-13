@@ -14,38 +14,43 @@ export class NavBarComponent {
     ngOnInit() {
         this.items = [
             {
-                label: 'Options',
+                label: 'MIS DATOS',
                 items: [
                     {
-                        label: 'Update',
-                        icon: 'pi pi-refresh',
+                        label: 'Mis datos',
+                        icon: 'pi pi-user',
                         command: () => {
                             this.update();
-                        }
-                    },
-                    {
-                        label: 'Delete',
-                        icon: 'pi pi-times',
-                        command: () => {
-                            this.delete();
                         }
                     }
                 ]
             },
             {
-                label: 'Navigate',
+                label: 'SOBRE NOSOTROS',
                 items: [
                     {
-                        label: 'Angular',
-                        icon: 'pi pi-external-link',
-                        url: 'http://angular.io'
+                        label: 'FAQs',
+                        icon: 'pi pi-check',
+                        command: () => {
+                            this.update();
+                        }
                     },
                     {
-                        label: 'Router',
-                        icon: 'pi pi-upload',
-                        routerLink: '/fileupload'
+                        label: 'Menú',
+                        icon: 'pi pi-check',
+                        command: () => {
+                            this.update();
+                        }
+                    },
+                    {
+                        label: 'Log Out',
+                        icon: 'pi pi-check',
+                        command: () => {
+                            this.update();
+                        }
                     }
                 ]
+                
             }
         ];
     }
