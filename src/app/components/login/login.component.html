@@ -1,39 +1,64 @@
-<div class="shadow-md rounded p-4 mx-auto w-90 " style="width: 90%; background: rgba(1, 1, 1, 0.8)">
-  <h2 class="text-2xl font-semibold mb-4 text-white">Iniciar Sesión</h2>
-  <form [formGroup]="usuarioForm" (ngSubmit)="onLogin()">
-    <div class="mb-4">
-      <label class="block text-white text-sm font-bold mb-2" for="email">
-        Correo Electrónico
-      </label>
-      <input id="email" type="email" formControlName="email"
-        class="p-inputtext w-full py-2 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500" />
-      <div *ngIf="usuarioForm.get('email')?.hasError('required') && usuarioForm.get('email')?.touched"
-        class="text-red-600">
-        Correo Electrónico es requerido.
-      </div>
-      <div *ngIf="usuarioForm.get('email')?.hasError('email') && usuarioForm.get('email')?.touched"
-        class="text-red-600">
-        Correo Electrónico no es válido.
-      </div>
+<div class="md:flex component-container">
+
+    <div class="md:hidden flex justify-content-center my-5">
+
+        <img class="w-8" src="/assets/logo-mobile.png" alt="">
+
     </div>
 
-    <div class="mb-6">
-      <label class="block text-white text-sm font-bold mb-2" for="password">
-        Contraseña
-      </label>
-      <input id="password" type="password" formControlName="password"
-        class="p-inputtext w-full py-2 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500" />
-      <div *ngIf="usuarioForm.get('password')?.hasError('required') && usuarioForm.get('password')?.touched"
-        class="text-red-600">
-        Contraseña es requerida.
-      </div>
+    <div class="hidden md:flex md:flex-column md:align-items-center md:justify-content-center md:w-5">
+        <img class="w-8" src="/assets/logo-tablet-desktop.png" alt="">
+        <h6 class="text-center text-white px-5">Sabemos que te gusta salir a tomar algo así que ahora te damos la
+            posibilidad de ganar puntos por todo lo que consumas para poder canjerarlos por increíbles promos.</h6>
     </div>
 
-    <div class="mb-6 text-center">
-      <button type="submit"
-        class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        Iniciar Sesión
-      </button>
+    <div class="shadow-md rounded p-4 mx-auto w-90 md:w-7" style="width: 90%; background: rgba(1, 1, 1, 0.8)">
+        <div class="flex justify-content-evenly lg:px-8">
+            <h3 class="text-white cursor-pointer">CREAR CUENTA</h3>
+            <h3 class="text-white border-bottom-3 pb-1 border-pink-600">INICIAR SESIÓN</h3>
+        </div>
+
+        <div class="flex flex-column align-items-center">
+            <h4 class="text-white mb-0 mt-7">SEGUÍ SUMANDO</h4>
+            <h5 class="text-center text-white mt-2 mb-7 px-3 md:px-5 lg:px-8">
+                Iniciá sesión para seguir disfrutando de los beneficios con nosotros.</h5>
+        </div>
+        <form [formGroup]="usuarioForm" (ngSubmit)="onLogin()">
+            <div class="mb-4 md:px-5 lg:px-8">
+                <input id="email" type="email" formControlName="email"
+                    class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
+                    placeholder="E-mail" />
+                <div *ngIf="usuarioForm.get('email')?.hasError('required') && usuarioForm.get('email')?.touched"
+                    class="text-pink-400 pt-2 error-validation">
+                    Correo Electrónico es requerido.
+                </div>
+                <div *ngIf="usuarioForm.get('email')?.hasError('email') && usuarioForm.get('email')?.touched"
+                    class="text-pink-400 pt-2 error-validation">
+                    Correo Electrónico no es válido.
+                </div>
+            </div>
+
+            <div class="mb-4 md:px-5 lg:px-8">
+                <input id="password" type="password" formControlName="password"
+                    class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
+                    placeholder="Contraseña" />
+                <div *ngIf="usuarioForm.get('password')?.hasError('required') && usuarioForm.get('password')?.touched"
+                    class="text-pink-400 pt-2 error-validation">
+                    Contraseña es requerida.
+                </div>
+            </div>
+
+            <div class="mb-7 mt-6 text-center">
+                <button type="submit"
+                    class="bg-transparent py-3 px-5 text-gray-600 border-solid border-gray-600 border-round-3xl hover:bg-pink-600 hover:border-pink-600 hover:text-white cursor-pointer">
+                    INICIAR SESIÓN
+                </button>
+            </div>
+        </form>
     </div>
-  </form>
+
+    <div class="text-center text-white md:hidden cursor-pointer">
+        <h6>¿Todavía no tenés una cuenta? Registrate</h6>
+    </div>
+
 </div>
