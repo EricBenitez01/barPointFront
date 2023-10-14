@@ -24,39 +24,42 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FormsModule } from '@angular/forms';
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    NavBarComponent,
-    RegisterComponent,
-    BenefitComponent,
-    BenefitListComponent,
-    FooterComponent,
-    ButtonComponent,
-    LogoComponent,
-    BenefitSliderComponent,
-    BenefitSliderItemComponent,
-    UserComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ButtonModule,
-    BrowserAnimationsModule,
-    MenuModule,
-    ToastModule,
-    MessagesModule,
-    HttpClientModule,
-    InputTextModule ,
-    CalendarModule ,
-    RadioButtonModule ,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        NavBarComponent,
+        RegisterComponent,
+        BenefitComponent,
+        BenefitListComponent,
+        FooterComponent,
+        ButtonComponent,
+        LogoComponent,
+        BenefitSliderComponent,
+        BenefitSliderItemComponent,
+        UserComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ButtonModule,
+        BrowserAnimationsModule,
+        MenuModule,
+        ToastModule,
+        MessagesModule,
+        HttpClientModule,
+        InputTextModule ,
+        CalendarModule ,
+        RadioButtonModule ,
+        FormsModule
+    ],
+    providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
