@@ -1,4 +1,4 @@
-<div class="md:flex">
+<div class="md:flex component-container">
 
     <div class="md:hidden flex justify-content-center my-5">
 
@@ -12,13 +12,13 @@
             puntos por todo lo que consumas para poder canjerarlos por increíbles promos.</h6>
     </div>
 
-    <div class="md:w-7">
+    
 
-        <div class="shadow-md rounded p-4 mx-auto w-90 md:w-full" style="width: 90%; background: rgba(1, 1, 1, 0.8)">
+        <div class="shadow-md rounded p-4 mx-auto w-90 md:w-7" style="width: 90%; background: rgba(1, 1, 1, 0.8)">
 
             <div class="flex justify-content-evenly lg:px-8">
                 <h3 class="text-white border-bottom-3 pb-1 border-pink-600">CREAR CUENTA</h3>
-                <h3 class="text-white">INICIAR SESIÓN</h3>
+                <h3 class="text-white cursor-pointer">INICIAR SESIÓN</h3>
             </div>
 
             <div class="flex flex-column align-items-center">
@@ -101,7 +101,7 @@
 
                 <div class="mt-5 mb-3 text-center">
                     <button type="submit"
-                        class="bg-transparent py-3 px-5 text-gray-600 border-solid border-gray-600 border-round-3xl hover:bg-pink-600 hover:border-pink-600 hover:text-white"
+                        class="bg-transparent py-3 px-5 text-gray-600 border-solid border-gray-600 border-round-3xl hover:bg-pink-600 hover:border-pink-600 hover:text-white cursor-pointer"
                         (click)="onSubmit()">
                         REGISTRARME
                     </button>
@@ -109,11 +109,11 @@
             </form>
         </div>
 
-        <div class="text-center text-white">
+        <div class="text-center text-white md:hidden cursor-pointer">
             <h6>¿Ya tenés una cuenta? Iniciá Sesión</h6>
         </div>
 
-    </div>
+    
 
 
 </div>

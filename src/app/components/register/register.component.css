@@ -56,6 +56,11 @@ h6 {
     width: 95%;
 }
 
+div.component-container {
+    height: 100vh;
+    align-items: stretch;
+}
+
 @media(min-width: 768px) {
     ::ng-deep .p-datepicker {
         top: 0px !important;
