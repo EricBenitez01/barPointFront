@@ -4,7 +4,6 @@
 @import "primeicons/primeicons.css";
 
 .backgroundApp {
-    background: rgb(234,84,147);
     background: linear-gradient(0deg, rgba(234,84,147,1) 0%, rgba(92,64,146,1) 100%);
 }
 

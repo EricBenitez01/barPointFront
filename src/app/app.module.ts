@@ -19,18 +19,18 @@ import { MenuModule } from 'primeng/menu';
 import { ToastModule } from 'primeng/toast';
 import { MessagesModule } from 'primeng/messages';
 import { UserComponent } from './components/user/user.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
 import { DropdownModule } from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 
@@ -69,46 +69,9 @@ import { CarouselModule } from 'primeng/carousel';
     CardModule,
     CarouselModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+],
   bootstrap: [AppComponent]
-=======
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './interceptors/auth.interceptor';
-
-
-@NgModule({
-    declarations: [
-        AppComponent,
-        LoginComponent,
-        NavBarComponent,
-        RegisterComponent,
-        BenefitComponent,
-        BenefitListComponent,
-        FooterComponent,
-        ButtonComponent,
-        LogoComponent,
-        BenefitSliderComponent,
-        BenefitSliderItemComponent,
-        UserComponent
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ButtonModule,
-        BrowserAnimationsModule,
-        MenuModule,
-        ToastModule,
-        MessagesModule,
-        HttpClientModule,
-        InputTextModule ,
-        CalendarModule ,
-        RadioButtonModule ,
-        FormsModule
-    ],
-    providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
-    ],
-    bootstrap: [AppComponent]
->>>>>>> atoledo
 })
 export class AppModule { }
