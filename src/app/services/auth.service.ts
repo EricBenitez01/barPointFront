@@ -1,27 +1,42 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class AuthService {
+    private tokenKey: string = 'auth_bigbangdevs';
+    private apiUrl: string = 'http://localhost:3001';  
 
-    private tokenKey: string = 'auth_bibangdevs';
+    constructor(private http: HttpClient) {}
 
-    constructor() { }
+    async login(username: string, password: string): Promise<void> {
+        try {
+            const response = await this.http.post<any>(`${this.apiUrl}/login`, { username, password }).toPromise();
 
-    login(token: string): void {
-        // Se guarda el token en localStorage
-        localStorage.setItem(this.tokenKey, token);
-    }
-
-    getToken(): string | null {
-        // Se recupera el token del localStorage
-        return localStorage.getItem(this.tokenKey);
+            if (response.token) {
+                this.setToken(response.token);
+            }
+        } catch (error) {
+            throw error;
+        }
     }
 
     logout(): void {
-        // Se elimina el token almacenado en el localStorage
+        this.removeToken();
+    }
+
+    setToken(token: string): void {
+        // Se almacena el token en localStorage
+        localStorage.setItem(this.tokenKey, token);
+    }
+
+    removeToken(): void {
         localStorage.removeItem(this.tokenKey);
+    }
+
+    getToken(): string | null {
+        return localStorage.getItem(this.tokenKey);
     }
 
     isLoggedIn(): boolean {
