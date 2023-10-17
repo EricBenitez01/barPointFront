@@ -8,12 +8,16 @@ import { UserLogin, UsersService } from 'src/app/services/users.service';
     styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+<<<<<<< HEAD
     usuarioForm: FormGroup;
+=======
+>>>>>>> atoledo
     usuario: UserLogin = {
         email: "",
         password: ""
     };
 
+<<<<<<< HEAD
     constructor(private userService: UsersService, private cdr: ChangeDetectorRef, private fb: FormBuilder) {
         this.usuarioForm = this.fb.group({
             email: ['', [Validators.required, Validators.email]],
@@ -35,6 +39,21 @@ export class LoginComponent {
                 }
             );
         }
+=======
+    constructor(private userService: UsersService, private cdr: ChangeDetectorRef) { }
+
+    async onLogin() {
+        let response = await this.userService.userLogin(this.usuario).subscribe(
+            (data) => {
+                this.cdr.detectChanges();
+                console.log(data);
+            },
+            (error) => {
+                // Manejo de errores
+                console.error(error);
+            }
+        ); 
+>>>>>>> atoledo
     }
 }
 
