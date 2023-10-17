@@ -4,7 +4,7 @@ h4 {
     font-size: 20px;
 }
 
-h3, h5, .p-inputtext, button, h6 {
+h3, h5, .p-inputtext, button, h6, div.error-validation {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -34,6 +34,70 @@ h6 {
     font-size: 14px;
 }
 
-.p-calendar {
-    padding: 1rem;
+::ng-deep .p-button {
+    background: grey !important;
+    border: 1px solid grey;
+}
+
+::ng-deep .p-button:enabled:hover {
+    background: #2563eb !important;
+}
+
+::ng-deep .p-calendar {
+    width: 100% !important;
+}
+
+::ng-deep .p-datepicker {
+    top: 55px !important;
+    left: -110px !important;
+}
+
+::ng-deep .p-dropdown {
+    width: 95%;
+}
+
+div.component-container {
+    height: 100vh;
+    align-items: stretch;
+}
+
+@media(min-width: 768px) {
+    ::ng-deep .p-datepicker {
+        top: 0px !important;
+        left: -224px !important;
+    }
+}
+
+@media(min-width: 992px) {
+
+    h3 {
+        font-size: 16px;
+    }
+
+    h4 {
+        font-size: 26px;
+    }
+
+    h5 {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 18px;
+    }
+}
+
+@media(min-width: 1200px) {
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 32px;
+    }
+
+    h5 {
+        font-size: 24px;
+    }
 }
