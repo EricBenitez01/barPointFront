@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UserAuthResponse } from './users.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
@@ -10,16 +12,20 @@ export class AuthService {
 
     constructor(private http: HttpClient) {}
 
-    async login(username: string, password: string): Promise<void> {
-        try {
-            const response = await this.http.post<any>(`${this.apiUrl}/login`, { username, password }).toPromise();
+    async login(email: string, password: string): Promise<Observable<UserAuthResponse>> {
+        const requestData = {
+            email: email, 
+            password: password
+        };
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+            })
+        };
 
-            if (response.token) {
-                this.setToken(response.token);
-            }
-        } catch (error) {
-            throw error;
-        }
+        console.log(this.http.post<UserAuthResponse>(`${this.apiUrl}/authUser`, requestData, httpOptions));
+        
+        return this.http.post<UserAuthResponse>(`${this.apiUrl}/authUser`, requestData, httpOptions);
     }
 
     logout(): void {

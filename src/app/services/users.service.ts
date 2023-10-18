@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({
     providedIn: 'root'
@@ -9,10 +10,9 @@ import { Observable } from 'rxjs';
 
 export class UsersService {
 
-
     private baseUrl = 'http://localhost:3001';
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private authService: AuthService) { }
 
     getAllUsers(): Observable<UsersResponse> {
         return this.http.get<UsersResponse>(`${this.baseUrl}/users`);
@@ -28,14 +28,8 @@ export class UsersService {
         return this.http.post<UsersResponse>(`${this.baseUrl}/users`, data, httpOptions);
     }
 
-    userLogin(data: UserLogin): Observable<UsersResponse> {
-        const httpOptions = {
-            headers: new HttpHeaders({
-                'Content-Type': 'application/json',
-                // Puedes agregar otras cabeceras personalizadas si es necesario
-            })
-        };
-        return this.http.post<UsersResponse>(`${this.baseUrl}/authUser`, data, httpOptions);
+    userLogin(data: UserLogin): Observable<UserAuthResponse> {
+        return this.authService.login(data.email, data.password);
     }
 
 }
@@ -58,4 +52,10 @@ export interface UsersResponse {
     ok: boolean;
     meta: any; // Tipo de los metadatos, puedes ajustarlo si conoces la estructura exacta
     data: User[]; // Tipo de los datos, puedes ajustarlo si conoces la estructura exacta
+}
+
+export interface UserAuthResponse {
+    ok: boolean;
+    msg: string;
+    token: string; 
 }

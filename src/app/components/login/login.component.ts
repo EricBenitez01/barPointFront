@@ -9,10 +9,6 @@ import { UserLogin, UsersService } from 'src/app/services/users.service';
 })
 export class LoginComponent {
     usuarioForm: FormGroup;
-    usuario: UserLogin = {
-        email: "",
-        password: ""
-    };
 
     constructor(private userService: UsersService, private cdr: ChangeDetectorRef, private fb: FormBuilder) {
         this.usuarioForm = this.fb.group({
@@ -22,19 +18,19 @@ export class LoginComponent {
     }
 
     async onLogin() {
-        if (this.usuarioForm.valid) { // Verifica si el formulario es válido
-            this.usuario = { ...this.usuario, ...this.usuarioForm.value };
-            let response = await this.userService.userLogin(this.usuario).subscribe(
-                (data) => {
-                    this.cdr.detectChanges();
-                    console.log(data);
-                },
-                (error) => {
-                    // Manejo de errores
-                    console.error(error);
-                }
-            );
-        }
+        const user: UserLogin = {
+            email: this.usuarioForm.value.email,
+            password: this.usuarioForm.value.password
+        };
+        let response = await this.userService.userLogin(user).subscribe(
+            (data) => {
+                this.cdr.detectChanges();
+                console.log(data);
+            },
+            (error) => {
+                // Manejo de errores
+                console.error(error);
+            }
+        ); 
     }
 }
-
