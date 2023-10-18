@@ -12,7 +12,7 @@ export class AuthService {
 
     constructor(private http: HttpClient) {}
 
-    async login(email: string, password: string): Promise<Observable<UserAuthResponse>> {
+    login(email: string, password: string): Observable<UserAuthResponse> {
         const requestData = {
             email: email, 
             password: password
@@ -23,9 +23,13 @@ export class AuthService {
             })
         };
 
-        console.log(this.http.post<UserAuthResponse>(`${this.apiUrl}/authUser`, requestData, httpOptions));
-        
-        return this.http.post<UserAuthResponse>(`${this.apiUrl}/authUser`, requestData, httpOptions);
+        let response = this.http.post<UserAuthResponse>(`${this.apiUrl}/authUser`, requestData, httpOptions);
+        response.subscribe(
+            (token) => {
+                this.setToken(token.token)
+            }
+        )
+        return response;
     }
 
     logout(): void {
@@ -35,6 +39,7 @@ export class AuthService {
     setToken(token: string): void {
         // Se almacena el token en localStorage
         localStorage.setItem(this.tokenKey, token);
+        console.log(token);
     }
 
     removeToken(): void {

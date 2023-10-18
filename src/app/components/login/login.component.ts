@@ -22,6 +22,7 @@ export class LoginComponent {
             email: this.usuarioForm.value.email,
             password: this.usuarioForm.value.password
         };
+        
         let response = await this.userService.userLogin(user).subscribe(
             (data) => {
                 this.cdr.detectChanges();
