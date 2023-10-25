@@ -31,6 +31,8 @@ import { CardListComponent } from './components/card-list/card-list.component';
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { FaqsComponent } from './components/faqs/faqs.component';
+import { AccordionModule } from 'primeng/accordion';
 
 
 
@@ -49,7 +51,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     BenefitSliderItemComponent,
     UserComponent,
     HomeComponent,
-    CardListComponent
+    CardListComponent,
+    FaqsComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     DropdownModule,
     ReactiveFormsModule,
     CardModule,
-    CarouselModule
+    CarouselModule,
+    AccordionModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
