@@ -31,8 +31,10 @@ import { CardListComponent } from './components/card-list/card-list.component';
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-
-
+import { PromotionsComponent } from './components/promotions/promotions.component';
+import { CustomersComponent } from './components/customers/customers.component';
+import { BusinessComponent } from './components/business/business.component';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,10 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     BenefitSliderItemComponent,
     UserComponent,
     HomeComponent,
-    CardListComponent
+    CardListComponent,
+    PromotionsComponent,
+    CustomersComponent,
+    BusinessComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     DropdownModule,
     ReactiveFormsModule,
     CardModule,
-    CarouselModule
+    CarouselModule,
+    TableModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

@@ -1,0 +1,42 @@
+<p-table 
+    [value]="promotions"  
+    [(selection)]="selectedPromotions" 
+    dataKey="code" 
+    [tableStyle]="{'min-width': '60rem'}"
+    [rows]="10"
+    [paginator]="true"
+>
+    <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+            PROMOS
+            <div>
+                <p-button class="mr-2" label="Agregar Promo"></p-button>
+                <p-button icon="pi pi-refresh"></p-button>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 4rem">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th>Título</th>
+            <th>Imagen</th>
+            <th>Descripción</th>
+            <th>Puntos</th>
+            <th>Acciones</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-promotions>
+        <tr class="text-xl">
+            <td>
+                <p-tableCheckbox [value]="promotions"></p-tableCheckbox>
+            </td>
+            <td>{{promotions.title}}</td>
+            <td><img src="../../../assets/img/Rectangle 7.png" width="100" class="shadow-4" /></td>
+            <td>{{promotions.description}}</td>
+            <td><span class="text-pink-600 font-normal">{{promotions.points}}</span> puntos</td>
+            <td>Acciones</td>
+        </tr>
+    </ng-template>
+</p-table>
