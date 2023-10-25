@@ -35,6 +35,9 @@ import { PromotionsComponent } from './components/promotions/promotions.componen
 import { CustomersComponent } from './components/customers/customers.component';
 import { BusinessComponent } from './components/business/business.component';
 import { TableModule } from 'primeng/table';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashletComponent } from './components/dashlet/dashlet.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,10 @@ import { TableModule } from 'primeng/table';
     CardListComponent,
     PromotionsComponent,
     CustomersComponent,
-    BusinessComponent
+    BusinessComponent,
+    DashboardComponent,
+    DashletComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
