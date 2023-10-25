@@ -1,7 +1,7 @@
 .cardContainer {
     display: flex;
     margin: auto;
-    width: 380px;
+    width: 80%;
     color: black;
     overflow: hidden;
     margin-bottom: 10px;
@@ -12,7 +12,7 @@
     color: black;
     padding: 15px;
     margin: auto;
-    width: 400px;
+    width: 95%;
     background-color: rgb(255, 255, 255, 0.5);
     border-radius: 8px;
 }
@@ -75,3 +75,34 @@
     flex-direction: column;
     justify-content: end;    
 }
+
+/* Estilos base para dispositivos móviles */
+
+  
+  .cardContainer {
+    width: 80%; /* Ocupa el 80% del ancho del contenedor en dispositivos móviles */
+    margin: auto;
+  }
+  
+  /* Media query para tabletas (ancho mínimo de 768px) */
+  @media (min-width: 768px) {
+    .listContainer {
+      width: 80%; /* Ocupa el 80% del ancho del contenedor en tabletas */
+    }
+  
+    .cardContainer {
+      width: 80%; /* Ocupa el 80% del ancho del contenedor en tabletas */
+    }
+  }
+  
+  /* Media query para escritorio (ancho mínimo de 1024px) */
+  @media (min-width: 1024px) {
+    .listContainer {
+      width: 80%; /* Ocupa el 80% del ancho del contenedor en escritorio */
+    }
+  
+    .cardContainer {
+      width: 80%; /* Ocupa el 80% del ancho del contenedor en escritorio */
+    }
+  }
+  
