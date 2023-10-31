@@ -24,5 +24,4 @@ export class PromotionsComponent {
     ];
 
     selectedPromotions!: any;
-
 }

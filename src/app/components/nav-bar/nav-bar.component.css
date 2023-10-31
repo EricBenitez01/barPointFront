@@ -1,0 +1,9 @@
+.mi-boton.mobile-visible {
+    display: block;
+}
+
+@media (min-width: 1024px) {
+    .mi-boton.mobile-visible {
+        display: none;
+    }
+}

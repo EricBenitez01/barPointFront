@@ -31,13 +31,15 @@ import { CardListComponent } from './components/card-list/card-list.component';
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { PromotionsComponent } from './components/promotions/promotions.component';
-import { CustomersComponent } from './components/customers/customers.component';
 import { BusinessComponent } from './components/business/business.component';
 import { TableModule } from 'primeng/table';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { DashletComponent } from './components/dashlet/dashlet.component';
-import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { FaqsComponent } from './components/faqs/faqs.component';
+import { AccordionModule } from 'primeng/accordion';
+import { SideNavComponent } from './components/business/side-nav/side-nav.component';
+import { CustomersComponent } from './components/business/customers/customers.component';
+import { PromotionsComponent } from './components/business/promotions/promotions.component';
+import { DashboardComponent } from './components/business/dashboard/dashboard.component';
+import { DashletComponent } from './components/business/dashlet/dashlet.component';
 
 @NgModule({
   declarations: [
@@ -55,12 +57,13 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     UserComponent,
     HomeComponent,
     CardListComponent,
-    PromotionsComponent,
-    CustomersComponent,
     BusinessComponent,
+    FaqsComponent,
+    SideNavComponent,
+    CustomersComponent,
+    PromotionsComponent,
     DashboardComponent,
-    DashletComponent,
-    SideNavComponent
+    DashletComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +82,8 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     ReactiveFormsModule,
     CardModule,
     CarouselModule,
-    TableModule
+    TableModule,
+    AccordionModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
