@@ -40,6 +40,7 @@ import { PromotionsComponent } from './components/business/promotions/promotions
 import { DashboardComponent } from './components/business/dashboard/dashboard.component';
 import { TableModule } from 'primeng/table';
 import { DashletComponent } from './components/business/dashlet/dashlet.component';
+import { TransactionPopupComponent } from './components/transaction-popup/transaction-popup.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { DashletComponent } from './components/business/dashlet/dashlet.componen
     CustomersComponent,
     PromotionsComponent,
     DashboardComponent,
-    DashletComponent
+    DashletComponent,
+    TransactionPopupComponent
   ],
   imports: [
     BrowserModule,
