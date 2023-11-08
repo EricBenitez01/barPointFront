@@ -33,8 +33,13 @@ import { CarouselModule } from 'primeng/carousel';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { AccordionModule } from 'primeng/accordion';
-
-
+import { BusinessComponent } from './components/business/business.component';
+import { SideNavComponent } from './components/business/side-nav/side-nav.component';
+import { CustomersComponent } from './components/business/customers/customers.component';
+import { PromotionsComponent } from './components/business/promotions/promotions.component';
+import { DashboardComponent } from './components/business/dashboard/dashboard.component';
+import { TableModule } from 'primeng/table';
+import { DashletComponent } from './components/business/dashlet/dashlet.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +57,13 @@ import { AccordionModule } from 'primeng/accordion';
     UserComponent,
     HomeComponent,
     CardListComponent,
-    FaqsComponent
+    BusinessComponent,
+    FaqsComponent,
+    SideNavComponent,
+    CustomersComponent,
+    PromotionsComponent,
+    DashboardComponent,
+    DashletComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +82,7 @@ import { AccordionModule } from 'primeng/accordion';
     ReactiveFormsModule,
     CardModule,
     CarouselModule,
+    TableModule,
     AccordionModule
   ],
   providers: [
