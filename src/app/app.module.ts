@@ -41,6 +41,8 @@ import { DashboardComponent } from './components/business/dashboard/dashboard.co
 import { TableModule } from 'primeng/table';
 import { DashletComponent } from './components/business/dashlet/dashlet.component';
 import { TransactionPopupComponent } from './components/transaction-popup/transaction-popup.component';
+import { DialogModule } from 'primeng/dialog';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -85,7 +87,9 @@ import { TransactionPopupComponent } from './components/transaction-popup/transa
     CardModule,
     CarouselModule,
     TableModule,
-    AccordionModule
+    AccordionModule,
+    DialogModule,
+    PanelModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
