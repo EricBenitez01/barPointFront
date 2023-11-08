@@ -31,15 +31,18 @@ import { CardListComponent } from './components/card-list/card-list.component';
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { BusinessComponent } from './components/business/business.component';
-import { TableModule } from 'primeng/table';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { AccordionModule } from 'primeng/accordion';
+import { BusinessComponent } from './components/business/business.component';
 import { SideNavComponent } from './components/business/side-nav/side-nav.component';
 import { CustomersComponent } from './components/business/customers/customers.component';
 import { PromotionsComponent } from './components/business/promotions/promotions.component';
 import { DashboardComponent } from './components/business/dashboard/dashboard.component';
+import { TableModule } from 'primeng/table';
 import { DashletComponent } from './components/business/dashlet/dashlet.component';
+import { TransactionPopupComponent } from './components/transaction-popup/transaction-popup.component';
+import { DialogModule } from 'primeng/dialog';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,8 @@ import { DashletComponent } from './components/business/dashlet/dashlet.componen
     CustomersComponent,
     PromotionsComponent,
     DashboardComponent,
-    DashletComponent
+    DashletComponent,
+    TransactionPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +87,9 @@ import { DashletComponent } from './components/business/dashlet/dashlet.componen
     CardModule,
     CarouselModule,
     TableModule,
-    AccordionModule
+    AccordionModule,
+    DialogModule,
+    PanelModule
   ],
   providers: [
     AuthInterceptor

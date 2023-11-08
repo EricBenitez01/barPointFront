@@ -1,0 +1,17 @@
+<p-button (click)="showDialog()" icon="pi pi-external-link" label="Transacción"></p-button>
+<p-dialog header="Transacción" [(visible)]="visible" [style]="{ width: '50vw' }">
+    <div class="flex py-2 justify-content-center">
+        <form class="max-w-md mx-auto mt-8 p-4 border border-gray-300 rounded-lg">
+            <div class="p-field mb-4">
+              <label for="name" class="block font-semibold">Nombre</label>
+              <input id="name" type="text" pInput [(ngModel)]="formData.name" name="name" class="p-inputtext w-full border border-gray-300 rounded p-2">
+            </div>
+            <div class="p-field mb-4">
+              <label for="email" class="block font-semibold">Correo Electrónico</label>
+              <input id="email" type="text" pInput [(ngModel)]="formData.email" name="email" class="p-inputtext w-full border border-gray-300 rounded p-2">
+            </div>
+            <button type="button" pButton (click)="guardarFormulario()" label="Guardar" class="p-button bg-blue-500 text-white py-2 px-4 rounded">
+            </button>
+          </form>          
+    </div>
+</p-dialog>
