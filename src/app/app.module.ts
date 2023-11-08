@@ -86,7 +86,7 @@ import { DashletComponent } from './components/business/dashlet/dashlet.componen
     AccordionModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    AuthInterceptor
 ],
   bootstrap: [AppComponent]
 })
