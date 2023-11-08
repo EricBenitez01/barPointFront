@@ -39,12 +39,17 @@ export class LoginComponent {
             this.cdr.detectChanges();
 
             if (!response.error) {
+                this.authService.setToken(response.token);
                 // Se redirige a la ruta Home
-                this.router.navigate(['']);
+                this.router.navigate(['/home']);
             }
         } catch (error) {
             // TO-DO: Mostrar info al usuario avisando que ingresó datos incorrectos
         }
 
+    }
+
+    onClickEvent() {
+        this.onLogin();
     }
 }
