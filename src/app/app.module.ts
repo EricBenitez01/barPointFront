@@ -43,6 +43,8 @@ import { DashletComponent } from './components/business/dashlet/dashlet.componen
 import { TransactionPopupComponent } from './components/transaction-popup/transaction-popup.component';
 import { DialogModule } from 'primeng/dialog';
 import { PanelModule } from 'primeng/panel';
+import { BusinessLoginComponent } from './components/business-login/business-login.component';
+import { BusinessRegisterComponent } from './components/business-register/business-register.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { PanelModule } from 'primeng/panel';
     PromotionsComponent,
     DashboardComponent,
     DashletComponent,
-    TransactionPopupComponent
+    TransactionPopupComponent,
+    BusinessLoginComponent,
+    BusinessRegisterComponent
   ],
   imports: [
     BrowserModule,
