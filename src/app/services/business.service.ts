@@ -21,6 +21,8 @@ export class BusinessService {
               'Content-Type': 'application/json',
           })
       };
+      console.log(data);
+      
       return this.http.post<BusinessResponse>(`${this.baseUrl}/businesses/create`, data, httpOptions);
   }
 

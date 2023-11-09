@@ -35,13 +35,13 @@ export class LoginComponent {
         };
 
         try {
-            const response = await this.authService.login(user.email, user.password);
+            const response = await this.authService.loginUser(user.email, user.password);
             this.cdr.detectChanges();
-            this.router.navigate(['home']);
+
             if (!response.error) {
                 this.authService.setToken(response.token);
                 // Se redirige a la ruta Home
-                this.router.navigate(['/home']);
+                this.router.navigate(['home']);
             }
             
         } catch (error) {

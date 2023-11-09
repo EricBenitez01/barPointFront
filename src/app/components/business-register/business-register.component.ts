@@ -11,9 +11,9 @@ export class BusinessRegisterComponent {
     businessForm: FormGroup;
     business: Business = {
         name: "",
-        lastname: "",
+        lastname: "bla",
         cuit: 0,
-        adress: "",
+        adress: "ble",
         phone: 0,
         businessName: "",
         email: "",
@@ -38,7 +38,7 @@ export class BusinessRegisterComponent {
     async onSubmit() {
         if (this.businessForm.valid) { // Verifica si el formulario es válido
             this.business = { ...this.business, ...this.businessForm.value };
-            console.log(this.business);
+            console.log("Negocio: " + this.business);
             
             let response = await this.userService.createBusinesses(this.business).subscribe(
                 (data) => {
