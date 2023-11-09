@@ -96,7 +96,7 @@ import { BusinessRegisterComponent } from './components/business-register/busine
     PanelModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    AuthInterceptor
 ],
   bootstrap: [AppComponent]
 })
