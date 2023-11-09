@@ -37,11 +37,12 @@ export class LoginComponent {
         try {
             const response = await this.authService.login(user.email, user.password);
             this.cdr.detectChanges();
-
+            this.router.navigate(['home']);
             if (!response.error) {
                 // Se redirige a la ruta Home
                 this.router.navigate(['']);
             }
+            
         } catch (error) {
             // TO-DO: Mostrar info al usuario avisando que ingresó datos incorrectos
         }
