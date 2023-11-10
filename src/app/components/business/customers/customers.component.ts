@@ -8,11 +8,11 @@ import { User, UsersResponse } from 'src/app/services/users.service';
     styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
-    customers!: any;
+    customers: User[] = [];
 
     @Input()
     businessId!: number;
-
+    
     constructor( private businessService: BusinessService ) { }
 
     ngOnInit(): void {
@@ -20,12 +20,11 @@ export class CustomersComponent implements OnInit {
     }
 
     async getCustomers() {
-        const data: BusinessUsers = {
-            order: "name",
-            businessId: this.businessId
-        }
-        let response: any = this.businessService.getBusinessUsers(data);
-        this.customers = response.data;
+        const businessId = this.businessId;
+        this.businessService.getBusinessUsers(businessId)
+            .subscribe((result) => {
+                this.customers = result.data
+            });
         console.log(this.customers);
     }
 

@@ -39,15 +39,17 @@ export class BusinessService {
 		return this.http.post<Business[]>(`${this.baseUrl}/businesses`, data, httpOptions);
 	}
 
-	getBusinessUsers(data: BusinessUsers): Observable<UsersResponse> {
-		const httpOptions = {
-            headers: new HttpHeaders({
-                'Content-Type': 'application/json',
-                // Puedes agregar otras cabeceras personalizadas si es necesario
-            })
-        };
-        return this.http.get<UsersResponse>(`${this.baseUrl}/users`);
-	}
+	getBusinessUsers(businessId: number): Observable<any> {
+    const httpOptions = {
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            // Puedes agregar otras cabeceras personalizadas si es necesario
+        })
+    };
+
+    return this.http.get<any>(`${this.baseUrl}/users/${businessId}`, httpOptions);
+}
+
 }
 
 export interface BusinessUsers {
