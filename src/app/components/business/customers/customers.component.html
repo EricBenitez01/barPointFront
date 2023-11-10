@@ -2,7 +2,6 @@
     <div class="px-4">
         <p-table 
             [value]="customers"  
-            [(selection)]="selectedCustomers" 
             dataKey="code" 
             [rows]="10"
             [paginator]="true"
@@ -16,9 +15,6 @@
             </ng-template>
             <ng-template pTemplate="header">
                 <tr>
-                    <th style="width: 4rem">
-                        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-                    </th>
                     <th>Nombre y Apellido</th>
                     <th>Información</th>
                     <th>Puntos</th>
@@ -27,9 +23,6 @@
             </ng-template>
             <ng-template pTemplate="body" let-customers>
                 <tr class="text-xl">
-                    <td>
-                        <p-tableCheckbox [value]="customers"></p-tableCheckbox>
-                    </td>
                     <td>{{customers.name}}</td>
                     <td>{{customers.information}}</td>
                     <td><span class="text-pink-600 font-normal">{{customers.points}}</span> puntos</td>

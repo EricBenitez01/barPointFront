@@ -21,9 +21,8 @@ export class BusinessComponent implements OnInit {
             // Se recupera del payload el id del business
             if ('businessId' in tokenData) {
                 this.businessId = tokenData.businessId;
-                console.log("BusinessId: " + this.businessId);
             }
         }
-
     }
+
 }
