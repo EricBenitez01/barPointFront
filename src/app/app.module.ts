@@ -33,6 +33,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { AccordionModule } from 'primeng/accordion';
+import { ProfileUserComponent } from './components/profile-user/profile-user.component';
 
 
 
@@ -52,7 +53,8 @@ import { AccordionModule } from 'primeng/accordion';
     UserComponent,
     HomeComponent,
     CardListComponent,
-    FaqsComponent
+    FaqsComponent,
+    ProfileUserComponent
   ],
   imports: [
     BrowserModule,
