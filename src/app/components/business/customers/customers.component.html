@@ -17,6 +17,7 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Email</th>
+                    <th>Puntos</th>
                     <th>Cumpleaños</th>
                 </tr>
             </ng-template>
@@ -24,8 +25,8 @@
                 <tr class="text-xl">
                     <td>{{customers.username}}</td>
                     <td>{{customers.email}}</td>
+                    <td>{{ customers.user_points[0]?.quantity || 0 }}</td>
                     <td><span class="text-pink-600 font-normal">{{customers.birthday | date: 'dd/MM/yyyy'}}</span></td>
-                    <td>{{customers.points}}</td>
                 </tr>
             </ng-template>
         </p-table>

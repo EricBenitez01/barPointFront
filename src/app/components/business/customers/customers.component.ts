@@ -26,6 +26,7 @@ export class CustomersComponent implements OnInit {
                 this.customers = result.data
             });
         console.log(this.customers);
+        
     }
 
 }

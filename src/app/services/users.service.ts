@@ -35,7 +35,7 @@ export class UsersService {
                 // Puedes agregar otras cabeceras personalizadas si es necesario
             })
         };
-        return this.http.post<User[]>(`${this.baseUrl}/users`, data, httpOptions);
+        return this.http.get<User[]>(`${this.baseUrl}/users/searchUser/${data}`, httpOptions);
     }
 }
 

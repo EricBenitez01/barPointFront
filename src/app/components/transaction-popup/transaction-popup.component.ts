@@ -15,8 +15,6 @@ export class TransactionPopupComponent {
     visible: boolean = false;
     searchTerm: string = '';
     clientSuggestions: User[] | undefined; // Lista de sugerencias de clientes
-
-    private searchTerms = new Subject<string>();
     foundUser: User[] = [];
     searchResults: User[] = [];
     
@@ -28,6 +26,8 @@ export class TransactionPopupComponent {
         .subscribe((result) => {
           this.searchResults = result;
         });
+        console.log(this.searchTerm);
+        
     }
   
     onClientSelectionChange() {
