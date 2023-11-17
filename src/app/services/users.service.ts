@@ -26,6 +26,15 @@ export class UsersService {
         };
         return this.http.post<UsersResponse>(`${this.baseUrl}/users`, data, httpOptions);
     }
+/*     getUser(): Observable<UsersResponse> {
+        const httpOptions = {
+            Headers: new HttpHeaders ({
+                'Content-Type': 'application/json',
+
+            })
+        };
+        return this.http.get<UsersResponse>(`${this.baseUrl}/users/detail/${userId}`)
+    } */
 }
 
 export interface User {
