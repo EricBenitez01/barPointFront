@@ -1,0 +1,10 @@
+<div class="flex">
+    <div class="w-1 min-h-screen bg-violet-800 pt-4 items-center justify-center">
+        <app-side-nav></app-side-nav>
+    </div>
+    <div class="min-h-screen bg-gray-50 flex flex-col"> 
+        <app-dashboard></app-dashboard>
+        <app-promotions></app-promotions>
+        <app-customers [businessId]="businessId"></app-customers>
+    </div>
+</div>

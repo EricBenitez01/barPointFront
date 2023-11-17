@@ -34,7 +34,19 @@ export class UsersService {
             })
         };
         return this.http.get<UsersResponse>(`${this.baseUrl}/users/detail/${userId}`)
-    } */
+    } 
+    */
+
+
+    searchUserByUsername(data: String): Observable<User[]> {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                // Puedes agregar otras cabeceras personalizadas si es necesario
+            })
+        };
+        return this.http.post<User[]>(`${this.baseUrl}/users`, data, httpOptions);
+    }
 }
 
 export interface User {

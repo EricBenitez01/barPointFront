@@ -36,6 +36,18 @@ import { AccordionModule } from 'primeng/accordion';
 import { ProfileUserComponent } from './components/profile-user/profile-user.component';
 
 
+import { BusinessComponent } from './components/business/business.component';
+import { SideNavComponent } from './components/business/side-nav/side-nav.component';
+import { CustomersComponent } from './components/business/customers/customers.component';
+import { PromotionsComponent } from './components/business/promotions/promotions.component';
+import { DashboardComponent } from './components/business/dashboard/dashboard.component';
+import { TableModule } from 'primeng/table';
+import { DashletComponent } from './components/business/dashlet/dashlet.component';
+import { TransactionPopupComponent } from './components/transaction-popup/transaction-popup.component';
+import { DialogModule } from 'primeng/dialog';
+import { PanelModule } from 'primeng/panel';
+import { BusinessLoginComponent } from './components/business-login/business-login.component';
+import { BusinessRegisterComponent } from './components/business-register/business-register.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +66,17 @@ import { ProfileUserComponent } from './components/profile-user/profile-user.com
     HomeComponent,
     CardListComponent,
     FaqsComponent,
-    ProfileUserComponent
+    ProfileUserComponent,
+    BusinessComponent,
+    FaqsComponent,
+    SideNavComponent,
+    CustomersComponent,
+    PromotionsComponent,
+    DashboardComponent,
+    DashletComponent,
+    TransactionPopupComponent,
+    BusinessLoginComponent,
+    BusinessRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -73,10 +95,13 @@ import { ProfileUserComponent } from './components/profile-user/profile-user.com
     ReactiveFormsModule,
     CardModule,
     CarouselModule,
-    AccordionModule
+    TableModule,
+    AccordionModule,
+    DialogModule,
+    PanelModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    AuthInterceptor
 ],
   bootstrap: [AppComponent]
 })

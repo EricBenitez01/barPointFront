@@ -1,10 +1,25 @@
-<div class="card flex justify-content-between m-4 mt-4">
+<!-- Elemento para dispositivos móviles y tabletas -->
+<div class="card flex justify-content-between m-4 mt-4 md:hidden">
     <div>
         <app-logo></app-logo>
     </div>
     <div class="justify-content-center">
         <p-toast></p-toast>
         <p-menu #menu [model]="items" [popup]="true"></p-menu>
-        <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-bars" class="mi-boton"></button>
+        <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-bars" class="mi-boton mobile-visible"></button>
     </div>
+</div>
+<!-- Elemento para escritorio -->
+<div class="md:block hidden">
+    <nav class="bg-black text-white p-2">
+        <div class="container mx-auto flex justify-between items-center">
+            <app-logo></app-logo>
+            <div class="space-x-4">
+                <a class="no-underline text-white" href="#">Inicio</a>
+                <a class="no-underline text-white" href="#">Acerca de Nosotros</a>
+                <a class="no-underline text-white" href="#">Servicios</a>
+                <a class="no-underline text-white" href="#">Contacto</a>
+            </div>
+        </div>
+    </nav>
 </div>

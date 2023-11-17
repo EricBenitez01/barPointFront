@@ -3,17 +3,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
-export interface UserLogin {
+export interface BusinessLogin {
     email: string,
     password: string
 }
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.css']
+    selector: 'app-business-login',
+    templateUrl: './business-login.component.html',
+    styleUrls: ['./business-login.component.css']
 })
-export class LoginComponent {
+export class BusinessLoginComponent {
     usuarioForm: FormGroup;
 
     constructor(
@@ -29,21 +29,20 @@ export class LoginComponent {
     }
 
     async onLogin() {
-        const user: UserLogin = {
+        const business: BusinessLogin = {
             email: this.usuarioForm.value.email,
             password: this.usuarioForm.value.password
         };
 
         try {
-            const response = await this.authService.loginUser(user.email, user.password);
+            const response = await this.authService.loginBusiness(business.email, business.password);
             this.cdr.detectChanges();
 
             if (!response.error) {
                 this.authService.setToken(response.token);
-                // Se redirige a la ruta Home
-                this.router.navigate(['home']);
+                // Se redirige a la ruta Business
+                this.router.navigate(['business']);
             }
-            
         } catch (error) {
             // TO-DO: Mostrar info al usuario avisando que ingresó datos incorrectos
         }
