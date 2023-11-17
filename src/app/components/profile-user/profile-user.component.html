@@ -19,7 +19,8 @@
                         </label>
                         <input id="nombreApellido" type="text" name="nombreApellido"
                             class="p-inputtext w-full py-1 px-3 rounded border border-gray-300 focus:outline-none focus:border-transparent"
-                            required />
+                            required
+                            [value]="userDetail.username" />
                     </div>
                     <div class="mb-4">
                         <label class="block text-black mb-2" for="email">
@@ -27,7 +28,8 @@
                         </label>
                         <input id="email" type="email" name="email"
                             class="p-inputtext w-full py-1 px-3 rounded border border-gray-300 focus:outline-none focus:border-transparent"
-                            required />
+                            required
+                            [value]="userDetail.email" />
                     </div>
                 </div>
                 <div class="form-part-container lg:w-6">
@@ -38,7 +40,8 @@
                             </label>
                             <input id="fechaNacimiento" type="text" name="fechaNacimiento"
                                 class="p-inputtext w-full py-1 px-3 rounded border border-gray-300 focus:outline-none focus:border-transparent"
-                                required />
+                                required
+                                [value]="userDetail.birthday" />
                         </div>
                         <div class="mb-4 w-6 lg:w-5">
                             <label class="block text-black mb-2" for="genero">
@@ -46,7 +49,8 @@
                             </label>
                             <input id="genero" type="text" name="genero"
                                 class="p-inputtext w-full py-1 px-3 rounded border border-gray-300 focus:outline-none focus:border-transparent"
-                                required />
+                                required
+                                [value]="userDetail.gender" />
                         </div>
                     </div>
                     <div class="mb-4">
@@ -55,16 +59,18 @@
                         </label>
                         <input id="localidadDireccion" type="text" name="localidadDireccion"
                             class="p-inputtext w-full py-1 px-3 rounded border border-gray-300 focus:outline-none focus:border-transparent"
-                            required />
+                            required
+                            [value]="userDetail.address" />
                     </div>
                 </div>
             </form>
-            <div class="button-container mt-6 mb-4">
+            <!-- Este boton servira para POSTEAR en un futuro -->
+            <!-- <div class="button-container mt-6 mb-4">
                 <button type="submit"
                     class="text-white py-3 px-5 border-solid border-round-3xl bg-pink-600 border-pink-600 cursor-pointer">
                     GUARDAR
                 </button>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
