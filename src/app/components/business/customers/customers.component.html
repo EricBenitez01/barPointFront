@@ -14,18 +14,17 @@
         </ng-template>
         <ng-template pTemplate="header">
             <tr>
-                <th>Nombre y Apellido</th>
-                <th>Información</th>
-                <th>Puntos</th>
-                <th>Acciones</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Cumpleaños</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-customers>
             <tr class="text-xl">
-                <td>{{customers.name}}</td>
-                <td>{{customers.information}}</td>
-                <td><span class="text-pink-600 font-normal">{{customers.points}}</span> puntos</td>
-                <td>Acciones</td>
+                <td>{{customers.username}}</td>
+                <td>{{customers.email}}</td>
+                <td><span class="text-pink-600 font-normal">{{customers.birthday | date: 'dd/MM/yyyy'}}</span></td>
+                <td>{{customers.points}}</td>
             </tr>
         </ng-template>
     </p-table>
