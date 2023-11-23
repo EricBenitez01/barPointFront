@@ -38,6 +38,10 @@ div.component-container {
     align-items: stretch;
 }
 
+.button-create-account {
+    border-color: rgb(230, 31, 133);
+}
+
 @media(min-width: 768px) {
     .logo-desktop-container {
         padding-top: 30dvh;

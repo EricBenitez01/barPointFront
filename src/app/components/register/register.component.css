@@ -60,6 +60,10 @@ div.component-container {
     align-items: stretch;
 }
 
+.button-log-in {
+    border-color: rgb(230, 31, 133);
+}
+
 @media(min-width: 768px) {
     ::ng-deep .p-datepicker {
         top: 0px !important;
