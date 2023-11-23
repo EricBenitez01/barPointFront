@@ -24,7 +24,7 @@
                 nosotros.</h5>
         </div>
         <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
-            <div class="mb-4 md:px-5 lg:px-8">
+            <div class="mb-3 md:px-5 lg:px-8">
                 <input id="nombreApellido" type="text" formControlName="username"
                     class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                     placeholder="Nombre y Apellido" />
@@ -34,9 +34,9 @@
                 </div>
             </div>
             <div class="flex md:px-5 lg:px-8">
-                <div class="mb-4 w-6 md:w-5">
+                <div class="mb-3 w-6 md:w-5">
                     <p-dropdown id="genderSelect" [options]="genderList" formControlName="gender" placeholder="Género"
-                        [style]="{'padding': '0.2rem 0 0.3rem 0'}">
+                        [style]="{'padding': '0.1rem 0 0.2rem 0.2rem'}">
 
                         <option *ngFor="let option of genderList" [value]="option">{{ option }}</option>
                     </p-dropdown>
@@ -45,9 +45,9 @@
                         Género es requerido.
                     </div>
                 </div>
-                <div class="mb-4 w-6 md:w-7">
+                <div class="mb-3 w-6 md:w-7">
                     <p-calendar id="fechaNacimiento" formControlName="birthday" [showIcon]="true"
-                        [inputStyle]="{'padding': '1rem 0 1rem 1rem'}"
+                        [inputStyle]="{'padding': '0.9rem 0 0.9rem 0.9rem'}"
                         class="w-full py-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                         placeholder="Cumpleaños">
                     </p-calendar>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mb-4 md:px-5 lg:px-8">
+            <div class="mb-3 md:px-5 lg:px-8">
                 <input id="localidadDireccion" type="text" formControlName="address"
                     class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                     placeholder="Localidad" />
@@ -66,7 +66,7 @@
                     Localidad es requerida.
                 </div>
             </div>
-            <div class="mb-4 md:px-5 lg:px-8">
+            <div class="mb-3 md:px-5 lg:px-8">
                 <input id="email" type="email" formControlName="email"
                     class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                     placeholder="E-mail" />
@@ -79,7 +79,7 @@
                     Email no es válido.
                 </div>
             </div>
-            <div class="mb-4 md:px-5 lg:px-8">
+            <div class="mb-3 md:px-5 lg:px-8">
                 <input id="Password" type="password" formControlName="password"
                     class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                     placeholder="Contraseña" />
