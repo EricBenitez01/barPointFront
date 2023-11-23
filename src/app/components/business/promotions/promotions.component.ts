@@ -22,6 +22,4 @@ export class PromotionsComponent {
             points: '3000 '
         }
     ];
-
-    selectedPromotions!: any;
 }
