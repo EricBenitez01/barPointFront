@@ -25,11 +25,11 @@
                     class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                     placeholder="E-mail" />
                 <div *ngIf="usuarioForm.get('email')?.hasError('required') && usuarioForm.get('email')?.touched"
-                    class="text-blue-400 pt-2 error-validation">
+                    class="pt-2 error-validation">
                     Correo Electrónico es requerido.
                 </div>
                 <div *ngIf="usuarioForm.get('email')?.hasError('email') && usuarioForm.get('email')?.touched"
-                    class="text-blue-400 pt-2 error-validation">
+                    class="pt-2 error-validation">
                     Correo Electrónico no es válido.
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                     placeholder="Contraseña" />
                 <div *ngIf="usuarioForm.get('password')?.hasError('required') && usuarioForm.get('password')?.touched"
-                    class="text-blue-400 pt-2 error-validation">
+                    class="pt-2 error-validation">
                     Contraseña es requerida.
                 </div>
             </div>

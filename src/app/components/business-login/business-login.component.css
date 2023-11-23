@@ -56,6 +56,10 @@ a:-webkit-any-link {
     text-decoration: none;
 }
 
+.error-validation {
+    color: rgb(111,199,217) !important;
+}
+
 @media(min-width: 768px) {
     .logo-desktop-container {
         padding-top: 30dvh;

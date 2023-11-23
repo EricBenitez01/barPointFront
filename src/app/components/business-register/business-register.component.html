@@ -29,7 +29,7 @@
                         class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                         placeholder="Nombre" />
                     <div *ngIf="businessForm.get('name')?.hasError('required') && businessForm.get('name')?.touched"
-                        class="text-blue-400 pt-2 error-validation">
+                        class="pt-2 error-validation">
                         Nombre es requerido.
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                         placeholder="Apellido" />
                     <div *ngIf="businessForm.get('lastname')?.hasError('required') && businessForm.get('lastname')?.touched"
-                        class="text-blue-400 pt-2 error-validation">
+                        class="pt-2 error-validation">
                         Apellido es requerido.
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                         class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                         placeholder="Teléfono" />
                     <div *ngIf="businessForm.get('phone')?.hasError('required') && businessForm.get('phone')?.touched"
-                        class="text-blue-400 pt-2 error-validation">
+                        class="pt-2 error-validation">
                         Teléfono es requerido.
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                         class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                         placeholder="Localidad" />
                     <div *ngIf="businessForm.get('adress')?.hasError('required') && businessForm.get('adress')?.touched"
-                        class="text-blue-400 pt-2 error-validation">
+                        class="pt-2 error-validation">
                         Localidad es requerida.
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                         class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                         placeholder="Nombre del Negocio" />
                     <div *ngIf="businessForm.get('businessName')?.hasError('required') && businessForm.get('businessName')?.touched"
-                        class="text-blue-400 pt-2 error-validation">
+                        class="pt-2 error-validation">
                         Nombre de negocio es requerido.
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                         class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                         placeholder="CUIT" />
                     <div *ngIf="businessForm.get('cuit')?.hasError('required') && businessForm.get('cuit')?.touched"
-                        class="text-blue-400 pt-2 error-validation">
+                        class="pt-2 error-validation">
                         CUIT es requerido.
                     </div>
                 </div>
@@ -88,11 +88,11 @@
                     class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                     placeholder="E-mail" />
                 <div *ngIf="businessForm.get('email')?.hasError('required') && businessForm.get('email')?.touched"
-                    class="text-blue-400 pt-2 error-validation">
+                    class="pt-2 error-validation">
                     Email es requerido.
                 </div>
                 <div *ngIf="businessForm.get('email')?.hasError('email') && businessForm.get('email')?.touched"
-                    class="text-blue-400 pt-2 error-validation">
+                    class="pt-2 error-validation">
                     Email no es válido.
                 </div>
             </div>
@@ -101,7 +101,7 @@
                     class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                     placeholder="Contraseña" />
                 <div *ngIf="businessForm.get('password')?.hasError('required') && businessForm.get('password')?.touched"
-                    class="text-blue-400 pt-2 error-validation">
+                    class="pt-2 error-validation">
                     Contraseña es requerida.
                 </div>
             </div>
