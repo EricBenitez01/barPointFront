@@ -46,6 +46,7 @@ import { PanelModule } from 'primeng/panel';
 import { BusinessLoginComponent } from './components/business-login/business-login.component';
 import { BusinessRegisterComponent } from './components/business-register/business-register.component';
 import { ProfileUserComponent } from './components/profile-user/profile-user.component';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 
 
@@ -97,7 +98,8 @@ import { ProfileUserComponent } from './components/profile-user/profile-user.com
     TableModule,
     AccordionModule,
     DialogModule,
-    PanelModule
+    PanelModule,
+    AutoCompleteModule,
   ],
   providers: [
     AuthInterceptor

@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
-import { Subject, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
-import { User, UsersResponse, UsersService } from 'src/app/services/users.service';
+import { Component, Input, OnInit, numberAttribute } from '@angular/core';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { Benefit, BenefitsService } from 'src/app/services/benefits.service';
+import { Business } from 'src/app/services/business.service';
+import { TransactionService } from 'src/app/services/transaction.service';
+import { User, UsersService } from 'src/app/services/users.service';
 
 @Component({
     selector: 'app-transaction-popup',
@@ -8,44 +12,69 @@ import { User, UsersResponse, UsersService } from 'src/app/services/users.servic
     styleUrls: ['./transaction-popup.component.css']
 })
 export class TransactionPopupComponent {
-    selectedClient: string = '';
+    @Input()
+    businessId: number = 1;
+    selectedClient!: any;
     selectedTransactionType: string = 'canje';
-    selectedPromotion: string = '';
+    selectedPromotion!: any;
     pointsToAdd: number = 0;
     visible: boolean = false;
     searchTerm: string = '';
-    clientSuggestions: User[] | undefined; // Lista de sugerencias de clientes
-    foundUser: User[] = [];
     searchResults: User[] = [];
-    
+    benefits: Benefit[] = [];
+    data: any;
 
-    constructor(private userService: UsersService) {}
+    constructor(private userService: UsersService, private benefitsService: BenefitsService, private transactionService: TransactionService ) { }
 
-    searchClient() {
-      this.userService.searchUserByUsername(this.searchTerm)
-        .subscribe((result) => {
-          this.searchResults = result;
-        });
-        console.log(this.searchTerm);
-        
+    ngOnInit() {
+        this.benefitsForBusiness();
     }
-  
-    onClientSelectionChange() {
-      // Aquí puedes manejar la selección del cliente
+
+    benefitsForBusiness() {
+        this.benefitsService.benefitsForaBusiness(this.businessId).subscribe((result) => {
+            this.benefits = result.data;
+        })
     }
-  
-    // Otras funciones y métodos
+    searchClient(event: any) {
+        this.userService.searchUserByUsername(event.query)
+            .subscribe((result) => {
+                this.searchResults = result.data;
+            });
+    }
+
     guardarTransaccion() {
-      if (this.selectedClient === null) {
-        alert("Se debe seleccionar un cliente");
-      } else if (this.selectedTransactionType === 'canje') {
-        alert("Este es un Canje");
-      } else if (this.selectedTransactionType === 'sumaPuntos') {
-        alert("Esta es una Suma de Puntos");
-      }
+        let transactionType;
+        if (this.selectedClient === '') {
+            alert('Se debe seleccionar un cliente');
+        }
+        
+        if (this.selectedTransactionType == 'canje') {
+            transactionType = 2
+            this.data = {
+                userEmail: this.selectedClient.email,
+                businessId: this.businessId, 
+                transactionTypeId:  transactionType, 
+                transactionValue: this.selectedPromotion.points_req, //que coirno era esto   
+                benefitId:  this.selectedPromotion.id
+            }
+        } else {
+            transactionType = 1
+            this.data = {
+                userEmail: this.selectedClient.email,
+                businessId: this.businessId, 
+                transactionTypeId:  transactionType, 
+                transactionValue: this.pointsToAdd, //que coirno era esto   
+                benefitId:  null
+            } 
+            console.log(this.selectedTransactionType);
+            
+        }
+        this.transactionService.transaction(this.data)
+        this.visible = false;
+        alert("La transaccion se realizo correctamente");
     }
-  
+
     showDialog() {
-      this.visible = true;
+        this.visible = true;
     }
-  }
+}
