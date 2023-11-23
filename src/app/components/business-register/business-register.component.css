@@ -40,8 +40,21 @@ div.component-container {
     background: linear-gradient(0deg, rgba(98,70,149,1) 0%, rgba(111,199,217,1) 100%);
 }
 
-.button-log-in {
-    border-color: rgb(111,199,217)
+.button-create-account {
+    border-color: rgb(111,199,217);
+}
+
+.button-log-in:hover {
+    padding-bottom: 0.25rem !important;
+    color: rgb(111,199,217) !important;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-color: rgb(111,199,217);
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+    text-decoration: none;
 }
 
 input#nombre {

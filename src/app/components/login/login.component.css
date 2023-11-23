@@ -38,8 +38,21 @@ div.component-container {
     align-items: stretch;
 }
 
-.button-create-account {
+.button-log-in {
     border-color: rgb(230, 31, 133);
+}
+
+.button-create-account:hover {
+    padding-bottom: 0.25rem !important;
+    color: rgb(230,31,133) !important;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-color: rgb(230,31,133);
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+    text-decoration: none;
 }
 
 @media(min-width: 768px) {
