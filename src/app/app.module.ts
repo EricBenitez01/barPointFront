@@ -45,6 +45,10 @@ import { DialogModule } from 'primeng/dialog';
 import { PanelModule } from 'primeng/panel';
 import { BusinessLoginComponent } from './components/business-login/business-login.component';
 import { BusinessRegisterComponent } from './components/business-register/business-register.component';
+import { ProfileUserComponent } from './components/profile-user/profile-user.component';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+
+
 
 @NgModule({
   declarations: [
@@ -71,7 +75,8 @@ import { BusinessRegisterComponent } from './components/business-register/busine
     DashletComponent,
     TransactionPopupComponent,
     BusinessLoginComponent,
-    BusinessRegisterComponent
+    BusinessRegisterComponent,
+    ProfileUserComponent
   ],
   imports: [
     BrowserModule,
@@ -93,7 +98,8 @@ import { BusinessRegisterComponent } from './components/business-register/busine
     TableModule,
     AccordionModule,
     DialogModule,
-    PanelModule
+    PanelModule,
+    AutoCompleteModule,
   ],
   providers: [
     AuthInterceptor

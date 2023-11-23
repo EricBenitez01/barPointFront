@@ -28,14 +28,14 @@ export class UsersService {
     }
 
 
-    searchUserByUsername(data: String): Observable<User[]> {
+    searchUserByUsername(data: String): Observable<UsersResponse> {
         const httpOptions = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json',
                 // Puedes agregar otras cabeceras personalizadas si es necesario
             })
         };
-        return this.http.post<User[]>(`${this.baseUrl}/users`, data, httpOptions);
+        return this.http.get<UsersResponse>(`${this.baseUrl}/users/searchUser/${data}`, httpOptions);
     }
 }
 
