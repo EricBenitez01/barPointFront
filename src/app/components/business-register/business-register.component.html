@@ -48,13 +48,16 @@
                     <input id="telefono" type="text" formControlName="phone"
                         class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                         placeholder="Teléfono" />
-                    <!-- Agrega validaciones si son necesarias -->
+                    <div *ngIf="businessForm.get('phone')?.hasError('required') && businessForm.get('phone')?.touched"
+                        class="text-blue-400 pt-2 error-validation">
+                        Teléfono es requerido.
+                    </div>
                 </div>
                 <div class="mb-4 w-7">
-                    <input id="localidadDireccion" type="text" formControlName="address"
+                    <input id="localidadDireccion" type="text" formControlName="adress"
                         class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                         placeholder="Localidad" />
-                    <div *ngIf="businessForm.get('address')?.hasError('required') && businessForm.get('address')?.touched"
+                    <div *ngIf="businessForm.get('adress')?.hasError('required') && businessForm.get('adress')?.touched"
                         class="text-blue-400 pt-2 error-validation">
                         Localidad es requerida.
                     </div>
@@ -65,13 +68,19 @@
                     <input id="businessName" type="text" formControlName="businessName"
                         class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                         placeholder="Nombre del Negocio" />
-                    <!-- Agrega validaciones si son necesarias -->
+                    <div *ngIf="businessForm.get('businessName')?.hasError('required') && businessForm.get('businessName')?.touched"
+                        class="text-blue-400 pt-2 error-validation">
+                        Nombre de negocio es requerido.
+                    </div>
                 </div>
                 <div class="mb-4 w-5">
                     <input id="cuit" type="text" formControlName="cuit"
                         class="p-inputtext w-full py-3 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
                         placeholder="CUIT" />
-                    <!-- Agrega validaciones si son necesarias -->
+                    <div *ngIf="businessForm.get('cuit')?.hasError('required') && businessForm.get('cuit')?.touched"
+                        class="text-blue-400 pt-2 error-validation">
+                        CUIT es requerido.
+                    </div>
                 </div>
             </div>
             <div class="mb-4 md:px-5 lg:px-8">
