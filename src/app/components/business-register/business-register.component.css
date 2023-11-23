@@ -34,37 +34,31 @@ h6 {
     font-size: 14px;
 }
 
-::ng-deep .p-button {
-    background: grey !important;
-    border: 1px solid grey;
-}
-
-::ng-deep .p-button:enabled:hover {
-    background: #2563eb !important;
-}
-
-::ng-deep .p-calendar {
-    width: 100% !important;
-}
-
-::ng-deep .p-datepicker {
-    top: 55px !important;
-    left: -110px !important;
-}
-
-::ng-deep .p-dropdown {
-    width: 95%;
-}
-
 div.component-container {
     min-height: 100vh;
     align-items: stretch;
+    background: linear-gradient(0deg, rgba(98,70,149,1) 0%, rgba(111,199,217,1) 100%);
+}
+
+.button-log-in {
+    border-color: rgb(111,199,217)
+}
+
+input#nombre {
+    width: 95% !important;
+}
+
+input#telefono {
+    width: 94% !important;
+}
+
+input#businessName {
+    width: 95.5% !important;
 }
 
 @media(min-width: 768px) {
-    ::ng-deep .p-datepicker {
-        top: 0px !important;
-        left: -224px !important;
+    .logo-desktop-container {
+        padding-top: 30dvh;
     }
 }
 
