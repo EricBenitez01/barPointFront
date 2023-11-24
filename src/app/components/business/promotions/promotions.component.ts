@@ -1,25 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Benefit, BenefitsService } from 'src/app/services/benefits.service';
 
 @Component({
     selector: 'app-promotions',
     templateUrl: './promotions.component.html',
     styleUrls: ['./promotions.component.css']
 })
-export class PromotionsComponent {
-    promotions: any = [{
-            title: 'Hamburguesa texana + papas regulares',
-            description: 'Esta es una descripción de la promo',
-            points: '250 '
-        },
-        {
-            title: '2x1 en pinta de 600ml',
-            description: 'Esta es una descripción de la promo',
-            points: '80 '
-        },
-        {
-            title: 'Hamburguesa texana + papas regulares',
-            description: 'Esta es una descripción de la promo',
-            points: '3000 '
-        }
-    ];
+export class PromotionsComponent implements OnInit {
+
+    @Input()
+    businessId!: number;
+
+    benefits: Benefit[] = [];
+
+    constructor(private benefitsService: BenefitsService) { }
+
+    ngOnInit(): void {
+        this.getBusinessBenefits();
+    }
+
+    getBusinessBenefits() {
+        this.benefitsService.benefitsForaBusiness(6).subscribe((result) => {
+            this.benefits = result.data;
+        })
+    };
 }

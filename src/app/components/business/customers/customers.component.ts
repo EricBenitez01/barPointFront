@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BusinessService, BusinessUsers } from 'src/app/services/business.service';
-import { User, UsersResponse } from 'src/app/services/users.service';
+import { User, UsersResponse, UsersService } from 'src/app/services/users.service';
 
 @Component({
     selector: 'app-customers',
@@ -13,20 +13,16 @@ export class CustomersComponent implements OnInit {
     @Input()
     businessId!: number;
     
-    constructor( private businessService: BusinessService ) { }
+    constructor(private businessService: BusinessService) { }
 
     ngOnInit(): void {
         this.getCustomers();
     }
 
     async getCustomers() {
-        const businessId = this.businessId;
-        this.businessService.getBusinessUsers(businessId)
+        this.businessService.getBusinessUsers(this.businessId)
             .subscribe((result) => {
                 this.customers = result.data
             });
-        console.log(this.customers);
-        
     }
-
 }

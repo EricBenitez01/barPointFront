@@ -22,14 +22,14 @@
         <!-- tables-container -->
         <div class="flex flex-col justify-center items-center bg-teal-50 mt-10">
             <!-- Contenedor promotions -->
-            <div class="mb-4 w-full">
+            <div class="mb-4 w-full pt-4">
                 <!-- Contenido de promotions -->
-                <app-promotions></app-promotions>
+                <app-promotions [businessId]="businessId"></app-promotions>
             </div>
             <!-- Contenedor customers -->
-            <div class="mt-6 w-full">
+            <div class="mt-2 w-full">
                 <!-- Contenido de customers -->
-                <app-promotions></app-promotions>
+                <app-customers [businessId]="businessId"></app-customers>
             </div>
         </div>
     </div>
