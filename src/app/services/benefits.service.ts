@@ -35,7 +35,8 @@ export interface Benefit {
     benefitname: string;
     img: string | null;
     discount: number;
-    points_req: string; // Puedes cambiar a number si siempre esperas un número
+    points_req: string;
+    description: string;
 }
 
 export interface BusinessResponse {
