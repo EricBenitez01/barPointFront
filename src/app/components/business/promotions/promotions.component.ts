@@ -20,7 +20,7 @@ export class PromotionsComponent implements OnInit {
     }
 
     getBusinessBenefits() {
-        this.benefitsService.benefitsForaBusiness(6).subscribe((result) => {
+        this.benefitsService.benefitsForaBusiness(this.businessId).subscribe((result) => {
             this.benefits = result.data;
         })
     };
