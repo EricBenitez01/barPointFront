@@ -14,7 +14,14 @@ export class UsersService {
     constructor(private http: HttpClient, private authService: AuthService) { }
 
     getAllUsers(): Observable<UsersResponse> {
-        return this.http.get<UsersResponse>(`${this.baseUrl}/users`);
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                // Puedes agregar otras cabeceras personalizadas si es necesario
+            })
+        };
+
+        return this.http.get<UsersResponse>(`${this.baseUrl}/users`, httpOptions);
     } 
 
     createUser(data: User): Observable<UsersResponse> {
