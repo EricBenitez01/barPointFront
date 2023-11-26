@@ -11,9 +11,9 @@ export class BusinessRegisterComponent {
     businessForm: FormGroup;
     business: Business = {
         name: "",
-        lastname: "bla",
+        lastname: "",
         cuit: 0,
-        adress: "ble",
+        adress: "",
         phone: 0,
         businessName: "",
         email: "",
@@ -24,11 +24,11 @@ export class BusinessRegisterComponent {
     constructor(private formBuilder: FormBuilder, private userService: BusinessService, private cdr: ChangeDetectorRef, private fb: FormBuilder) {
         this.businessForm = this.formBuilder.group({
             name: ['', [Validators.required]],
-            lastname: [''],
-            cuit: [''],
-            adress: [''],
-            phone: [''],
-            businessName: [''],
+            lastname: ['', [Validators.required]],
+            cuit: ['', [Validators.required]],
+            adress: ['', [Validators.required]],
+            phone: ['', [Validators.required]],
+            businessName: ['', [Validators.required]],
             email: ['', [Validators.required, Validators.email]],
             password: ['', [Validators.required]],
             rolFK: 2

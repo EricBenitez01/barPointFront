@@ -10,7 +10,7 @@
 h2, h3 {
     font-family: 'MADE Soulmaze', sans-serif;
 }
-h4, label, button {
+h4, label, button, .p-inputtext, input:-webkit-autofill {
     font-family: 'Roboto', sans-serif;
 }
 h2 {
@@ -57,6 +57,7 @@ button {
 }
 input:-webkit-autofill {
     transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #495057;
 }
 
 @media(min-width: 768px) {
@@ -84,5 +85,11 @@ input:-webkit-autofill {
     }
     .button-container {
         align-self: flex-end;
+    }
+    .center-container {
+        width: 90%;
+    }
+    .form-part-container {
+        padding-right: 10%;
     }
 }

@@ -26,6 +26,16 @@ export class UsersService {
         };
         return this.http.post<UsersResponse>(`${this.baseUrl}/users`, data, httpOptions);
     }
+    getUser(userId: number): Observable<UsersResponse> {
+        const httpOptions = {
+            headers: new HttpHeaders ({
+                'Content-Type': 'application/json',
+
+            })
+        };
+        return this.http.get<UsersResponse>(`${this.baseUrl}/users/detail/${userId}`, httpOptions)
+    } 
+   
 
 
     searchUserByUsername(data: String): Observable<UsersResponse> {

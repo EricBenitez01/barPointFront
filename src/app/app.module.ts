@@ -33,6 +33,8 @@ import { CarouselModule } from 'primeng/carousel';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { AccordionModule } from 'primeng/accordion';
+
+
 import { BusinessComponent } from './components/business/business.component';
 import { SideNavComponent } from './components/business/side-nav/side-nav.component';
 import { CustomersComponent } from './components/business/customers/customers.component';
@@ -66,6 +68,8 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     UserComponent,
     HomeComponent,
     CardListComponent,
+    FaqsComponent,
+    ProfileUserComponent,
     BusinessComponent,
     FaqsComponent,
     SideNavComponent,
@@ -76,7 +80,6 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     TransactionPopupComponent,
     BusinessLoginComponent,
     BusinessRegisterComponent,
-    ProfileUserComponent
   ],
   imports: [
     BrowserModule,
