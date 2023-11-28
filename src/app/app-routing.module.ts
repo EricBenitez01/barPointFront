@@ -16,14 +16,11 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'users', component: UserComponent, canActivate: [AuthGuard] },
-    { path: 'profile-user', component: ProfileUserComponent},
+    { path: 'profile-user', component: ProfileUserComponent, canActivate: [AuthGuard] },
     { path: 'business', component: BusinessComponent, canActivate: [AuthGuard]},
-    { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
     { path: 'faqs', component: FaqsComponent, canActivate: [AuthGuard] },
     { path: 'businessRegister', component: BusinessRegisterComponent },
     { path: 'businessLogin', component: BusinessLoginComponent },
-    { path: 'faqs', component: FaqsComponent },
-    { path: 'profile-user', component: ProfileUserComponent}
 ];
 
 @NgModule({

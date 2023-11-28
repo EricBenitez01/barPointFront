@@ -11,14 +11,13 @@
 </div>
 <!-- Elemento para escritorio -->
 <div class="md:block hidden">
-    <nav class="bg-black text-white p-2">
+    <nav class="text-white p-2" style="background: rgba(1, 1, 1, 0.8)">
         <div class="container mx-auto flex justify-between items-center">
             <app-logo></app-logo>
             <div class="space-x-4">
-                <a class="no-underline text-white" href="#">Inicio</a>
-                <a class="no-underline text-white" href="#">Acerca de Nosotros</a>
-                <a class="no-underline text-white" href="#">Servicios</a>
-                <a class="no-underline text-white" href="#">Contacto</a>
+                <a class="button-nav-desktop no-underline text-white" href="/profile-user">MIS DATOS</a>
+                <a class="button-nav-desktop no-underline text-white" href="/faqs">SOBRE NOSOTROS</a>
+                <a class="button-nav-desktop no-underline text-white" href="/" (click)="redirectLogin()">LOG OUT</a>
             </div>
         </div>
     </nav>
