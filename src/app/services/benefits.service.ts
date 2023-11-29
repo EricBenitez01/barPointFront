@@ -27,6 +27,27 @@ export class BenefitsService {
         return this.http.get<BusinessResponse>(`${this.baseUrl}/benefits/${data}`, httpOptions);
     }
 
+    create(data: Benefit): Observable<Benefit> {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                // Puedes agregar otras cabeceras personalizadas si es necesario
+            })
+        };
+    
+        return this.http.post<Benefit>(`${this.baseUrl}/benefits`, data, httpOptions);
+    }
+
+    edit(id: number, data: Benefit): Observable<Benefit> {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                // Puedes agregar otras cabeceras personalizadas si es necesario
+            })
+        };
+    
+        return this.http.put<Benefit>(`${this.baseUrl}/benefits/${id}`, data, httpOptions);
+    }
 }
 
 export interface Benefit {
