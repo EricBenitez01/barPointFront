@@ -38,7 +38,7 @@ export class BenefitsService {
         return this.http.post<Benefit>(`${this.baseUrl}/benefits`, data, httpOptions);
     }
 
-    edit(id: number, data: Benefit): Observable<Benefit> {
+    edit(benefitId: number, data: Benefit): Observable<Benefit> {
         const httpOptions = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json',
@@ -46,15 +46,26 @@ export class BenefitsService {
             })
         };
     
-        return this.http.put<Benefit>(`${this.baseUrl}/benefits/${id}`, data, httpOptions);
+        return this.http.put<Benefit>(`${this.baseUrl}/benefits/${benefitId}`, data, httpOptions);
+    }
+
+    delete(benefitId: number): Observable<Benefit> {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                // Puedes agregar otras cabeceras personalizadas si es necesario
+            })
+        };
+    
+        return this.http.delete<Benefit>(`${this.baseUrl}/benefits/${benefitId}`, httpOptions);
     }
 }
 
 export interface Benefit {
-    id: number;
-    businessFK: number;
+    id?: number;
+    businessFK?: number;
     benefitname: string;
-    img: string | null;
+    img?: string | null;
     discount: number;
     points_req: string;
     description: string;
