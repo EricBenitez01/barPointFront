@@ -10,8 +10,9 @@
             <div class="flex align-items-center justify-content-between">
                 PROMOS
                 <div>
-                    <p-button class="mr-2" label="Agregar Promo"></p-button>
-                    <p-button icon="pi pi-refresh"></p-button>
+                    <!-- <p-button class="mr-2" label="Agregar Promo"></p-button> --> 
+                    <app-benefit-popup [businessId]="businessId"></app-benefit-popup>
+                    <p-button icon="pi pi-refresh" (onClick)="reloadBenefits()"></p-button>
                 </div>
             </div>
         </ng-template>

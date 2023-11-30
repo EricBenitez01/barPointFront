@@ -34,7 +34,6 @@ export class BenefitsService {
                 // Puedes agregar otras cabeceras personalizadas si es necesario
             })
         };
-    
         return this.http.post<Benefit>(`${this.baseUrl}/benefits`, data, httpOptions);
     }
 
@@ -66,7 +65,7 @@ export interface Benefit {
     businessFK?: number;
     benefitname: string;
     img?: string | null;
-    discount: number;
+    discount?: number;
     points_req: string;
     description: string;
 }

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RegisterComponent } from './components/register/register.component';
-import { BenefitComponent } from './components/benefit/benefit.component';
+import { BenefitPopupComponent } from './components/benefit-popup/benefit-popup.component';
 import { BenefitListComponent } from './components/benefit-list/benefit-list.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
@@ -58,7 +58,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     LoginComponent,
     NavBarComponent,
     RegisterComponent,
-    BenefitComponent,
+    BenefitPopupComponent,
     BenefitListComponent,
     FooterComponent,
     ButtonComponent,
