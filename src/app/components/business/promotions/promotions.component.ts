@@ -26,6 +26,8 @@ export class PromotionsComponent implements OnInit {
     };
 
     reloadBenefits() {
-        this.getBusinessBenefits();
+        this.benefitsService.benefitsForaBusiness(this.businessId).subscribe((result) => {
+            this.benefits = result.data;
+        })
     }
 }

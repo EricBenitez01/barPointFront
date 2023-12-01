@@ -14,6 +14,7 @@ export class BenefitPopupComponent {
 
     title!: string;
     description!: string;
+    discount!: number;
     points!: string;
     newBenefit!: Benefit;
 
@@ -27,17 +28,20 @@ export class BenefitPopupComponent {
     }
 
     saveBenefit() {
-        if (this.title && this.description && this.description) {
+        if (this.title && this.description && this.discount && this.points) {
             this.newBenefit = {
-                businessFK: 2,
+                businessFK: this.businessId,
                 benefitname: this.title,
                 img: null,
-                discount: 800,
+                discount: this.discount,
                 description: this.description,
                 points_req: this.points
             };
             console.log(this.newBenefit);
-            this.benefitService.create(this.newBenefit);
+            this.benefitService.create(this.newBenefit)
+            .subscribe(response => {
+                console.log(response);
+            });
         }
         this.visible = false;
     }
