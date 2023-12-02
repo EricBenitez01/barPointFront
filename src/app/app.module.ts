@@ -49,6 +49,7 @@ import { BusinessLoginComponent } from './components/business-login/business-log
 import { BusinessRegisterComponent } from './components/business-register/business-register.component';
 import { ProfileUserComponent } from './components/profile-user/profile-user.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { HamburgerMenuComponent } from './components/hamburger-menu/hamburger-menu.component';
 
 
 
@@ -80,6 +81,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     TransactionPopupComponent,
     BusinessLoginComponent,
     BusinessRegisterComponent,
+    HamburgerMenuComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,7 @@ h4, label, button, .p-inputtext, input:-webkit-autofill {
 h2 {
     font-weight: 400;
     font-size: 20px;
-    padding-right: 8%;
+    padding-left: 23px;
 }
 h3 {
     font-weight: 400;
@@ -54,6 +54,7 @@ button {
     border-bottom-width: 1px !important;
     border-color: black !important;
     border-radius: 0;
+    color: #343A40;
 }
 input:-webkit-autofill {
     transition: background-color 5000s ease-in-out 0s;
