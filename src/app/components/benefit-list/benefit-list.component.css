@@ -41,6 +41,12 @@
     padding-top: 0px;;
 }
 
+h2 {
+  font-family: 'MADE Soulmaze', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
 .title {
     margin: 0px;
     margin-bottom: 7px;
@@ -80,7 +86,7 @@
 
   
   .cardContainer {
-    width: 80%; /* Ocupa el 80% del ancho del contenedor en dispositivos móviles */
+    width: 95%; /* Ocupa el 95% del ancho del contenedor en dispositivos móviles */
     margin: auto;
   }
   
@@ -92,6 +98,17 @@
   
     .cardContainer {
       width: 80%; /* Ocupa el 80% del ancho del contenedor en tabletas */
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .line {
+      width: 90%; /* Ocupa el 90% del ancho del contenedor en tabletas */
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
   }
   

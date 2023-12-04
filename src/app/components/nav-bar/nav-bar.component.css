@@ -1,9 +1,14 @@
-.mi-boton.mobile-visible {
-    display: block;
+.button-nav-desktop {
+    font-family: 'MADE Soulmaze', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+.button-nav-desktop:hover {
+    color: rgb(230,31,133) !important;
 }
 
 @media (min-width: 1024px) {
-    .mi-boton.mobile-visible {
-        display: none;
+    .button-nav-desktop {
+        font-size: 18px;
     }
 }

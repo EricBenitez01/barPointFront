@@ -4,13 +4,12 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-    selector: 'app-nav-bar',
-    templateUrl: './nav-bar.component.html',
-    styleUrls: ['./nav-bar.component.css'],
+    selector: 'app-hamburger-menu',
+    templateUrl: './hamburger-menu.component.html',
+    styleUrls: ['./hamburger-menu.component.css'],
     providers: [MessageService]
 })
-export class NavBarComponent {
-
+export class HamburgerMenuComponent {
     items: any[] | undefined;
     constructor(private messageService: MessageService, private router: Router, private authService: AuthService) { }
 
