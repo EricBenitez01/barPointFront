@@ -18,11 +18,11 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'users', component: UserComponent, canActivate: [AuthGuard] },
     { path: 'profile-user', component: ProfileUserComponent, canActivate: [AuthGuard] },
-    { path: 'business', component: BusinessComponent, canActivate: [AuthGuard]},
+    { path: 'business', component: BusinessComponent, canActivate: [AuthGuard] },
     { path: 'faqs', component: FaqsComponent, canActivate: [AuthGuard] },
     { path: 'businessRegister', component: BusinessRegisterComponent },
     { path: 'businessLogin', component: BusinessLoginComponent },
-    { path: 'menu-viewer', component: MenuViewerComponent },
+    { path: 'menu-viewer', component: MenuViewerComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
