@@ -14,9 +14,10 @@ export class BenefitPopupComponent {
 
     title!: string;
     description!: string;
+    uploadedFiles: any[] = [];
+    image!: File;
     discount!: number;
     points!: string;
-    newBenefit!: Benefit;
 
     visible: boolean = false;
 
@@ -27,18 +28,15 @@ export class BenefitPopupComponent {
         this.visible = true;
     }
 
+    onFileSelect(event: any) {
+        if (event && event.files[0]) {
+            this.image = event.files[0];
+        }
+    }
+
     saveBenefit() {
         if (this.title && this.description && this.discount && this.points) {
-            this.newBenefit = {
-                businessFK: this.businessId,
-                benefitname: this.title,
-                img: null,
-                discount: this.discount,
-                description: this.description,
-                points_req: this.points
-            };
-            console.log(this.newBenefit);
-            this.benefitService.create(this.newBenefit)
+            this.benefitService.create(this.businessId, this.title, this.description, this.discount, this.points, this.image)
             .subscribe(response => {
                 console.log(response);
             });

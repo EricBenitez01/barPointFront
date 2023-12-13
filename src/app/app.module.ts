@@ -49,8 +49,7 @@ import { BusinessLoginComponent } from './components/business-login/business-log
 import { BusinessRegisterComponent } from './components/business-register/business-register.component';
 import { ProfileUserComponent } from './components/profile-user/profile-user.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
-
-
+import { FileUploadModule } from 'primeng/fileupload';
 
 @NgModule({
   declarations: [
@@ -103,6 +102,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     DialogModule,
     PanelModule,
     AutoCompleteModule,
+    FileUploadModule
   ],
   providers: [
     AuthInterceptor
