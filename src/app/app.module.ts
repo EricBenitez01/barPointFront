@@ -50,7 +50,8 @@ import { BusinessRegisterComponent } from './components/business-register/busine
 import { ProfileUserComponent } from './components/profile-user/profile-user.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { HamburgerMenuComponent } from './components/hamburger-menu/hamburger-menu.component';
-
+import { MenuViewerComponent } from './components/menu-viewer/menu-viewer.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 
 @NgModule({
@@ -82,6 +83,7 @@ import { HamburgerMenuComponent } from './components/hamburger-menu/hamburger-me
     BusinessLoginComponent,
     BusinessRegisterComponent,
     HamburgerMenuComponent,
+    MenuViewerComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,6 +107,7 @@ import { HamburgerMenuComponent } from './components/hamburger-menu/hamburger-me
     DialogModule,
     PanelModule,
     AutoCompleteModule,
+    PdfViewerModule,
   ],
   providers: [
     AuthInterceptor

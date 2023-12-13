@@ -10,6 +10,7 @@ import { FaqsComponent } from './components/faqs/faqs.component';
 import { ProfileUserComponent } from './components/profile-user/profile-user.component'
 import { BusinessRegisterComponent } from './components/business-register/business-register.component';
 import { BusinessLoginComponent } from './components/business-login/business-login.component';
+import { MenuViewerComponent } from './components/menu-viewer/menu-viewer.component';
 
 const routes: Routes = [
     { path: '', component: LoginComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
     { path: 'faqs', component: FaqsComponent, canActivate: [AuthGuard] },
     { path: 'businessRegister', component: BusinessRegisterComponent },
     { path: 'businessLogin', component: BusinessLoginComponent },
+    { path: 'menu-viewer', component: MenuViewerComponent },
 ];
 
 @NgModule({

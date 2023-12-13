@@ -1,0 +1,11 @@
+<app-nav-bar></app-nav-bar>
+<div class="title-container flex w-full align-items-center md:hidden">
+    <a class="no-underline" href="/home"><i class="md:hidden fa-solid fa-arrow-left text-white text-center w-1 mx-2"></i></a>
+    <h2 class="text-white text-center w-11 md:pr-0 md:w-full lg:mb-0">MENÚ</h2>
+    <app-hamburger-menu class="md:hidden"></app-hamburger-menu>
+</div>
+<pdf-viewer [src]="pdfSrc"
+              [render-text]="true"
+              [original-size]="false"
+              style="width: 100%; height: 100vh"
+></pdf-viewer>
