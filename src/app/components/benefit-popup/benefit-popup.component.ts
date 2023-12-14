@@ -24,7 +24,6 @@ export class BenefitPopupComponent {
     constructor(private benefitService: BenefitsService) {}
 
     showDialog() {
-        console.log("BusinessId: " + this.businessId);
         this.visible = true;
     }
 

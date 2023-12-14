@@ -50,6 +50,8 @@ import { BusinessRegisterComponent } from './components/business-register/busine
 import { ProfileUserComponent } from './components/profile-user/profile-user.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { FileUploadModule } from 'primeng/fileupload';
+import { BenefitPopupEditComponent } from './components/benefit-popup-edit/benefit-popup-edit.component';
+import { BenefitPopupDeleteComponent } from './components/benefit-popup-delete/benefit-popup-delete.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +81,8 @@ import { FileUploadModule } from 'primeng/fileupload';
     TransactionPopupComponent,
     BusinessLoginComponent,
     BusinessRegisterComponent,
+    BenefitPopupEditComponent,
+    BenefitPopupDeleteComponent,
   ],
   imports: [
     BrowserModule,
