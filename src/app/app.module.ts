@@ -55,6 +55,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { FileUploadModule } from 'primeng/fileupload';
 import { BenefitPopupEditComponent } from './components/benefit-popup-edit/benefit-popup-edit.component';
 import { BenefitPopupDeleteComponent } from './components/benefit-popup-delete/benefit-popup-delete.component';
+import { MenuPopupComponent } from './components/menu-popup/menu-popup.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import { BenefitPopupDeleteComponent } from './components/benefit-popup-delete/b
     MenuViewerComponent,
     BenefitPopupEditComponent,
     BenefitPopupDeleteComponent,
+    MenuPopupComponent,
   ],
   imports: [
     BrowserModule,
