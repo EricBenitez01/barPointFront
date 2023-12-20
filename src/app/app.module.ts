@@ -56,6 +56,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { BenefitPopupEditComponent } from './components/benefit-popup-edit/benefit-popup-edit.component';
 import { BenefitPopupDeleteComponent } from './components/benefit-popup-delete/benefit-popup-delete.component';
 import { MenuPopupComponent } from './components/menu-popup/menu-popup.component';
+import { UserProfileDataComponent } from './components/user-profile-data/user-profile-data.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { MenuPopupComponent } from './components/menu-popup/menu-popup.component
     BenefitPopupEditComponent,
     BenefitPopupDeleteComponent,
     MenuPopupComponent,
+    UserProfileDataComponent,
   ],
   imports: [
     BrowserModule,

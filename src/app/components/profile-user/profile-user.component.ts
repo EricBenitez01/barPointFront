@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { User, UsersService } from 'src/app/services/users.service';
+import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
     selector: 'app-profile-user',
@@ -7,26 +7,21 @@ import { User, UsersService } from 'src/app/services/users.service';
     styleUrls: ['./profile-user.component.css']
 })
 export class ProfileUserComponent {
-/* Se espera que devuelva el detalle del usuario logueado */
-    @Input()
-    userId: number = 1;
+    userId!: number;
 
-    userDetail: any;
+    constructor( private authService: AuthService ) { } 
 
-    constructor(private userService: UsersService) { }
+    ngOnInit(): void {
+        const token = this.authService.getToken();
 
-    ngOnInit() {
-        this.getUser(this.userId);
+        if (token) {
+            const tokenData = JSON.parse(atob(token.split('.')[1]));
+
+            // Se recupera del payload el id del user
+            if ('userId' in tokenData) {
+                this.userId = tokenData.userId;
+            }
+        }
     }
 
-    async getUser(userId: number) {
-        this.userService.getUser(userId)
-            .subscribe(
-                (result) => {
-                    this.userDetail = result.data;
-                    console.log(this.userDetail.username);
-                    
-                }
-            )
-    }
 }
