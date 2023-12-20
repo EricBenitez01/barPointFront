@@ -29,5 +29,14 @@ export class PromotionsComponent implements OnInit {
         this.benefitsService.benefitsForaBusiness(this.businessId).subscribe((result) => {
             this.benefits = result.data;
         })
-    }
+    };
+
+    getImagenUrl(imagenNombre: string): string {
+        if (imagenNombre) {
+            return `http://localhost:3001/images/${imagenNombre}`;
+        }
+        else {
+            return "../../../assets/defaultImage.png";
+        }
+    };
 }
