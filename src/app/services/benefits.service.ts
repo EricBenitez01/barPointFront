@@ -30,7 +30,7 @@ export class BenefitsService {
     create(businessId: number, title: string , description: string, discount: number, points: string, image: File): Observable<Benefit> {
         const formData = new FormData();
         formData.append('businessFK', businessId.toString());
-        formData.append('benefitName', title);
+        formData.append('benefitname', title);
         formData.append('description', description);
         formData.append('discount', discount.toString())
         formData.append('points_req', points);
@@ -39,8 +39,8 @@ export class BenefitsService {
         return this.http.post<Benefit>(`${this.baseUrl}/benefits`, formData);
     }
 
-    edit(benefitId: number, data: Benefit): Observable<Benefit> {
-        return this.http.put<Benefit>(`${this.baseUrl}/benefits/${benefitId}`, data);
+    edit(benefitId: number): Observable<Benefit> {
+        return this.http.put<Benefit>(`${this.baseUrl}/benefits/${benefitId}`, null);
     }
 
     delete(benefitId: number): Observable<Benefit> {
