@@ -54,7 +54,7 @@ export class HamburgerMenuComponent {
                         label: 'Menú',
                         icon: 'pi pi-map',
                         command: () => {
-                            this.update();
+                            this.router.navigate(['menu-viewer']);
                         }
                     },
                     {

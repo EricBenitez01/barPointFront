@@ -30,6 +30,12 @@ export class BusinessService {
 		return this.http.post<BusinessResponse>(`${this.baseUrl}/businesses/create`, data, httpOptions);
 	}
 
+	editBusinesses(businessId: number, menu:any): Observable<Business> {
+		const formData = new FormData();
+		formData.append('menu', menu);
+        return this.http.put<Business>(`${this.baseUrl}/businesses/${businessId}`, formData);
+    }
+
 	searchUserByBusinessname(data: String): Observable<Business[]> {
 		const httpOptions = {
 			headers: new HttpHeaders({
@@ -76,7 +82,8 @@ export interface Business {
 	email: string,
 	adress: string,
 	password: string,
-	rolFK: number
+	rolFK: number,
+	menu?: any;
 }
 
 export interface BusinessResponse {
