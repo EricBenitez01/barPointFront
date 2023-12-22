@@ -59,6 +59,7 @@ import { BenefitPopupEditComponent } from './components/benefit-popup-edit/benef
 import { BenefitPopupDeleteComponent } from './components/benefit-popup-delete/benefit-popup-delete.component';
 import { MenuPopupComponent } from './components/menu-popup/menu-popup.component';
 import { UserProfileDataComponent } from './components/user-profile-data/user-profile-data.component';
+import { MenuViewerDataComponent } from './components/menu-viewer-data/menu-viewer-data.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +97,7 @@ import { UserProfileDataComponent } from './components/user-profile-data/user-pr
     BenefitPopupDeleteComponent,
     MenuPopupComponent,
     UserProfileDataComponent,
+    MenuViewerDataComponent,
   ],
   imports: [
     BrowserModule,
