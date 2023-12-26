@@ -10,20 +10,38 @@ export class BenefitPopupEditComponent implements OnInit {
     @Input()
     benefitId!: number;
 
+    @Input()
     title!: string;
+
+    @Input()
     description!: string;
-    uploadedFiles: any[] = [];
-    image!: File;
+
+    @Input()
+    image!: string;
+
+    @Input()
     discount!: number;
+
+    @Input()
     points!: string;
+
+    imageToShow!: string;
+
+    uploadedFiles: any[] = [];
+    newImage!: File;
 
 	visible: boolean = false;
 
 	constructor(private benefitService: BenefitsService) {}
 
     ngOnInit(): void {
-        this.showDialog();
-    }
+        if (this.image) {
+            this.imageToShow = `http://localhost:3001/images/${this.image}`;
+        }
+        else {
+            this.imageToShow = "../../../assets/defaultImage.png";
+        }
+    };
 
 	showDialog() {
         this.visible = true;
@@ -35,12 +53,43 @@ export class BenefitPopupEditComponent implements OnInit {
 
     onFileSelect(event: any) {
         if (event && event.files[0]) {
-            this.image = event.files[0];
+            this.newImage = event.files[0];
+        }
+
+        // Se actualiza la imagen mostrada en el formulario
+        const reader = new FileReader();
+        reader.onload = (e: any) => {
+            this.imageToShow = e.target.result;
+        };
+        reader.readAsDataURL(this.newImage);
+    };
+
+    getImagenUrl(): string {
+        if (this.image) {
+            return `http://localhost:3001/images/${this.image}`;
+        }
+        else {
+            return "../../../assets/defaultImage.png";
         }
     };
 
 	editBenefit() {
-        this.benefitService.edit(this.benefitId)
+        const formData = new FormData();
+        formData.append('businessFK', this.benefitId.toString());
+        formData.append('benefitname', this.title);
+        formData.append('description', this.description);
+        formData.append('discount', this.discount.toString())
+        formData.append('points_req', this.points);
+
+        // Verifico si se editó la imagen
+        if (this.newImage) {
+            formData.append('img', this.newImage);
+        }
+        else {
+            formData.append('img', this.image);
+        }
+
+        this.benefitService.edit(this.benefitId, formData)
             .subscribe(response => {
                 console.log(response);
             });
