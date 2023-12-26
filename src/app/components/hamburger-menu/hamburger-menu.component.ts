@@ -29,7 +29,7 @@ export class HamburgerMenuComponent {
     ngOnInit() {
         this.items = [
             {
-                label: 'MIS DATOS',
+                label: 'USUARIO',
                 items: [
                     {
                         label: 'Mis datos',
@@ -44,7 +44,7 @@ export class HamburgerMenuComponent {
                 label: 'SOBRE NOSOTROS',
                 items: [
                     {
-                        label: 'FAQs',
+                        label: 'Preguntas Frecuentes',
                         icon: 'pi pi-question-circle',
                         command: () => {
                             this.router.navigate(['faqs']);
@@ -58,7 +58,7 @@ export class HamburgerMenuComponent {
                         }
                     },
                     {
-                        label: 'Log Out',
+                        label: 'Cerrar sesión',
                         icon: 'pi pi-sign-out',
                         command: () => {
                             this.redirectLogin();
