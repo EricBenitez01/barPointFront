@@ -39,8 +39,8 @@ export class BenefitsService {
         return this.http.post<Benefit>(`${this.baseUrl}/benefits`, formData);
     }
 
-    edit(benefitId: number): Observable<Benefit> {
-        return this.http.put<Benefit>(`${this.baseUrl}/benefits/${benefitId}`, null);
+    edit(benefitId: number, data: FormData): Observable<Benefit> {
+        return this.http.put<Benefit>(`${this.baseUrl}/benefits/${benefitId}`, data);
     }
 
     delete(benefitId: number): Observable<Benefit> {
