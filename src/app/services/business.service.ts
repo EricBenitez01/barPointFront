@@ -36,6 +36,16 @@ export class BusinessService {
         return this.http.put<Business>(`${this.baseUrl}/businesses/${businessId}`, formData);
     }
 
+	getBusiness(businessId: number): Observable<BusinessResponse> {
+        const httpOptions = {
+            headers: new HttpHeaders ({
+                'Content-Type': 'application/json',
+
+            })
+        };
+        return this.http.get<BusinessResponse>(`${this.baseUrl}/businesses/${businessId}`, httpOptions)
+    }
+
 	searchUserByBusinessname(data: String): Observable<Business[]> {
 		const httpOptions = {
 			headers: new HttpHeaders({

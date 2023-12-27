@@ -23,7 +23,7 @@ const routes: Routes = [
     { path: 'faqs', component: FaqsComponent, canActivate: [AuthGuard] },
     { path: 'businessRegister', component: BusinessRegisterComponent },
     { path: 'businessLogin', component: BusinessLoginComponent },
-    { path: 'menu-viewer', component: MenuViewerComponent, canActivate: [AuthGuard] },
+    { path: 'menu-viewer/:id', component: MenuViewerComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

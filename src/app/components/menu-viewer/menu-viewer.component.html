@@ -6,19 +6,6 @@
         <h2 class="text-white text-center w-11 md:pr-0 md:w-full lg:mb-0">MENÚ</h2>
         <app-hamburger-menu class="md:hidden"></app-hamburger-menu>
     </div>
-    <div class="flex justify-content-center py-3">
-        <p-button icon="pi pi-search-minus" (click)="zoomOut()">
-        </p-button>
-        <p-button class="mx-3" icon="pi pi-search-plus" (click)="zoomIn()">
-        </p-button>
-        <p-button icon="pi pi-refresh" (click)="resetZoom()">
-        </p-button>
-    </div>
-    <pdf-viewer [src]="pdfSrc" 
-                [render-text]="true" 
-                [original-size]="false" 
-                style="height: 100vh"
-                [zoom]="pdfZoom">
-    </pdf-viewer>
+    <app-menu-viewer-data [businessId]="businessId"></app-menu-viewer-data>
     <app-footer></app-footer>
 </div>
