@@ -18,7 +18,7 @@ export class BusinessRegisterComponent {
         businessName: "",
         email: "",
         password: "",
-        rolFK: 2
+        rolFK: 3
     };
 
     constructor(private formBuilder: FormBuilder, private userService: BusinessService, private cdr: ChangeDetectorRef, private fb: FormBuilder) {
@@ -31,7 +31,7 @@ export class BusinessRegisterComponent {
             businessName: ['', [Validators.required]],
             email: ['', [Validators.required, Validators.email]],
             password: ['', [Validators.required]],
-            rolFK: 2
+            rolFK: 3
         });
     }
 

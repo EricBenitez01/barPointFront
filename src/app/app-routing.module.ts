@@ -10,20 +10,19 @@ import { FaqsComponent } from './components/faqs/faqs.component';
 import { ProfileUserComponent } from './components/profile-user/profile-user.component'
 import { BusinessRegisterComponent } from './components/business-register/business-register.component';
 import { BusinessLoginComponent } from './components/business-login/business-login.component';
+import { RolesEnum } from './services/auth.service';
 
 const routes: Routes = [
     { path: '', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-    { path: 'users', component: UserComponent, canActivate: [AuthGuard] },
-    { path: 'profile-user', component: ProfileUserComponent},
-    { path: 'business', component: BusinessComponent, canActivate: [AuthGuard]},
-    { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
-    { path: 'faqs', component: FaqsComponent, canActivate: [AuthGuard] },
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard], data: { expectedRole: [RolesEnum.UserRole, RolesEnum.BusinessRole] } },
+    { path: 'users', component: UserComponent, canActivate: [AuthGuard], data: { expectedRole: [RolesEnum.UserRole] } },
+    { path: 'profile-user', component: ProfileUserComponent, canActivate: [AuthGuard], data: { expectedRole: [RolesEnum.UserRole] }},
+    { path: 'business', component: BusinessComponent, canActivate: [AuthGuard], data: { expectedRole: [RolesEnum.BusinessRole] }},
+    { path: 'login', component: LoginComponent },
+    { path: 'faqs', component: FaqsComponent },
     { path: 'businessRegister', component: BusinessRegisterComponent },
     { path: 'businessLogin', component: BusinessLoginComponent },
-    { path: 'faqs', component: FaqsComponent },
-    { path: 'profile-user', component: ProfileUserComponent}
 ];
 
 @NgModule({
