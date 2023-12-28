@@ -18,6 +18,8 @@ export class LoginComponent {
     clicking: boolean = false;
     businessId!: number;
 
+    errorMessage: string = '';
+
     constructor(
         private authService: AuthService, 
         private cdr: ChangeDetectorRef, 
@@ -49,7 +51,7 @@ export class LoginComponent {
             }
             
         } catch (error) {
-            // TO-DO: Mostrar info al usuario avisando que ingresó datos incorrectos
+            this.errorMessage = 'Datos incorrectos. Por favor, verifica tus credenciales.';
         }
 
     }
