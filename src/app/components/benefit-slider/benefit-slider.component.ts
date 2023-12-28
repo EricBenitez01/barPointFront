@@ -13,6 +13,8 @@ export class BenefitSliderComponent {
     
     responsiveOptions: any[] = [];
     benefits: Benefit[] = [];
+
+    private baseUrl: string = 'http://localhost:3001';
     
     constructor(private benefitsService: BenefitsService) { }
 
@@ -27,6 +29,15 @@ export class BenefitSliderComponent {
         })
         console.log("Esta es la data " + this.responsiveOptions);
         
+    };
+
+    getImagenUrl(imagenNombre: string): string {
+        if (imagenNombre) {
+            return `${this.baseUrl}/images/${imagenNombre}`;
+        }
+        else {
+            return "../../../assets/defaultImage.png";
+        }
     };
     
 }
