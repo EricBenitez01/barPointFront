@@ -27,12 +27,11 @@ export class BenefitsService {
         return this.http.get<BusinessResponse>(`${this.baseUrl}/benefits/${data}`, httpOptions);
     }
 
-    create(businessId: number, title: string , description: string, discount: number, points: string, image: File): Observable<Benefit> {
+    create(businessId: number, title: string , description: string, points: string, image: File): Observable<Benefit> {
         const formData = new FormData();
-        formData.append('businessFK', businessId.toString());
+        formData.append('businessfk', businessId.toString());
         formData.append('benefitname', title);
         formData.append('description', description);
-        formData.append('discount', discount.toString())
         formData.append('points_req', points);
         formData.append('img', image);
 

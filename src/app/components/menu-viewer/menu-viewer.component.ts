@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'app-menu-viewer',
@@ -9,11 +9,18 @@ import { ActivatedRoute } from '@angular/router';
 export class MenuViewerComponent {
     businessId!: number;
 
-    constructor(private route: ActivatedRoute) { }
+    constructor(
+        private router: Router,
+        private route: ActivatedRoute) { }
 
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.businessId = params['id'];
         })
     }
+
+    redirectHome() {
+        this.router.navigate(['home', this.businessId]);
+    }
+
 }

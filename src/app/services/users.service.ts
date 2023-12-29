@@ -63,7 +63,9 @@ export interface User {
     address: string,
     gender: string,
     password: string,
-    rolFK: number
+    rolfk: number,
+    businessId: number,
+    user_points?: number;
 }
 
 export interface UsersResponse {

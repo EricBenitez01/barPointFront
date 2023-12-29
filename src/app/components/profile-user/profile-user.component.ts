@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,8 +9,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ProfileUserComponent {
     userId!: number;
+    businessId!: number;
 
-    constructor( private authService: AuthService ) { } 
+    constructor(private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
 
     ngOnInit(): void {
         const token = this.authService.getToken();
@@ -22,6 +24,12 @@ export class ProfileUserComponent {
                 this.userId = tokenData.userId;
             }
         }
+        this.route.params.subscribe(params => {
+            this.businessId = params['id'];
+        })
     }
 
-}
+    redirectHome() {
+        this.router.navigate(['home', this.businessId]);
+    }
+};

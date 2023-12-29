@@ -1,12 +1,12 @@
 <div class="main-profile-container">
-    <app-nav-bar></app-nav-bar>
+    <app-nav-bar [businessId]="businessId"></app-nav-bar>
     <div class="profile-container md:px-8 md:mx-6 md:my-4 md:border-round-md md:shadow-4 lg:px-0">
         <div class="title-container flex w-full align-items-center md:hidden">
-            <a class="no-underline" href="/home"><i class="md:hidden fa-solid fa-arrow-left text-white text-center w-1 mx-2"></i></a>
+            <a class="no-underline" (click)="redirectHome()"><i class="md:hidden fa-solid fa-arrow-left text-white text-center w-1 mx-2"></i></a>
             <h2 class="text-white text-center w-11 md:pr-0 md:w-full lg:mb-0">MIS DATOS</h2>
-            <app-hamburger-menu class="md:hidden"></app-hamburger-menu>
+            <app-hamburger-menu class="md:hidden" [businessId]="businessId"></app-hamburger-menu>
         </div>
-        <app-user-profile-data [userId]="userId" style="width: 80%;"></app-user-profile-data>
+        <app-user-profile-data [userId]="userId" [businessId]="businessId" style="width: 80%;"></app-user-profile-data>
     </div>
     <app-footer></app-footer>
 </div>

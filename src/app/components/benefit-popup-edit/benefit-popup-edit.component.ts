@@ -78,7 +78,6 @@ export class BenefitPopupEditComponent implements OnInit {
         formData.append('businessFK', this.benefitId.toString());
         formData.append('benefitname', this.title);
         formData.append('description', this.description);
-        formData.append('discount', this.discount.toString())
         formData.append('points_req', this.points);
 
         // Verifico si se editó la imagen

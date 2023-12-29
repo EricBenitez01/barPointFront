@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -10,19 +10,23 @@ import { AuthService } from 'src/app/services/auth.service';
     providers: [MessageService]
 })
 export class HamburgerMenuComponent {
+    @Input()
+    businessId!: number;
+
     items: any[] | undefined;
+
     constructor(private messageService: MessageService, private router: Router, private authService: AuthService) { }
 
     redirectLogin() {
         // Se cierra la sesión del user
         this.authService.logout();
         // Se redirige al login
-        this.router.navigate(['']);
+        this.router.navigate(['login', this.businessId]);
     }
 
     redirectHome() {
         if (this.authService.isLoggedIn()) {
-            this.router.navigate(['home']);
+            this.router.navigate(['home', this.businessId]);
         }
     }
 
@@ -35,7 +39,7 @@ export class HamburgerMenuComponent {
                         label: 'Mis datos',
                         icon: 'pi pi-user',
                         command: () => {
-                            this.router.navigate(['profile-user']);
+                            this.router.navigate(['profile-user', this.businessId]);
                         }
                     }
                 ]
@@ -47,14 +51,14 @@ export class HamburgerMenuComponent {
                         label: 'Preguntas Frecuentes',
                         icon: 'pi pi-question-circle',
                         command: () => {
-                            this.router.navigate(['faqs']);
+                            this.router.navigate(['faqs', this.businessId]);
                         }
                     },
                     {
                         label: 'Menú',
                         icon: 'pi pi-map',
                         command: () => {
-                            this.router.navigate(['menu-viewer']);
+                            this.router.navigate(['menu-viewer', this.businessId]);
                         }
                     },
                     {

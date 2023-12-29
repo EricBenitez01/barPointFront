@@ -9,23 +9,25 @@ import { UsersService } from 'src/app/services/users.service';
 export class UserProfileDataComponent {
     @Input()
     userId!: number;
-
+    @Input()
+    businessId!: number;
+    birthday!: Date;
     userDetail: any;
 
     constructor(private userService: UsersService) { }
 
     ngOnInit() {
-        this.getUser(this.userId);
+        this.getUser(this.userId, this.businessId);
     }
 
     /* Recibo el detalle del usuario logueado */
-    async getUser(userId: number) {
+    async getUser(userId: number, businessId: number) {
         this.userService.getUser(userId)
             .subscribe(
                 (result) => {
                     this.userDetail = result.data;
-                    console.log(this.userDetail.username);
-                    
+                    this.birthday = this.userDetail.birthday.slice(0,10);
+                    console.log(this.userDetail.username);   
                 }
             )
     }

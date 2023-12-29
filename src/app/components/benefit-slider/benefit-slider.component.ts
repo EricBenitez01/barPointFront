@@ -24,7 +24,7 @@ export class BenefitSliderComponent {
 
     getBusinessBenefits() {
         this.benefitsService.benefitsForaBusiness(this.businessId).subscribe((result) => {
-            this.responsiveOptions = result.data;
+            this.responsiveOptions = result.data.slice(0, 5);
             this.benefits = this.responsiveOptions;
         })
         console.log("Esta es la data " + this.responsiveOptions);
