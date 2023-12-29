@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+export enum RolesEnum {
+    UserRole = 'user', 
+    SuperUserRole = 'superUser',
+    BusinessRole = 'business'
+}
+
 @Injectable({
     providedIn: 'root',
 })
@@ -77,4 +83,31 @@ export class AuthService {
         return !!token;
     }
 
+    getRole(): RolesEnum | null {
+        // Se obtiene el rol almacenado en el token
+        const token = this.getToken();
+
+        if (token) {
+            const tokenData = JSON.parse(atob(token.split('.')[1]));
+            let rol: RolesEnum;
+
+            // Se recupera del payload el rol y se determina según RolesEnum
+            if ('rol' in tokenData) {
+                switch (tokenData.rol) {
+                    case 1:
+                        rol = RolesEnum.UserRole;
+                        break;
+                    case 2:
+                        rol = RolesEnum.SuperUserRole;
+                        break;
+                    default:
+                        rol = RolesEnum.BusinessRole;
+                        break;
+                }
+                console.log("Rol obtenido: " + rol);
+                return rol;
+            }
+        }
+        return null;
+    }
 }

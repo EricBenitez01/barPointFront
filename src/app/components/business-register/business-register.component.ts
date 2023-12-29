@@ -19,7 +19,7 @@ export class BusinessRegisterComponent {
         businessName: "",
         email: "",
         password: "",
-        rolFK: 2
+        rolFK: 3
     };
     clicking: boolean = false;
 
@@ -38,7 +38,7 @@ export class BusinessRegisterComponent {
             businessName: ['', [Validators.required]],
             email: ['', [Validators.required, Validators.email]],
             password: ['', [Validators.required]],
-            rolFK: 2
+            rolFK: 3
         });
     }
 
